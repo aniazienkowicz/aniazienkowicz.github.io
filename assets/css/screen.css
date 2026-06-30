@@ -1,6 +1,6 @@
 *{
-  margin: 10px;
-  padding: 10px;
+  margin: 0px;
+  padding: 0px;
 }
 
 body {
@@ -22,5 +22,5 @@ img{
 
 .katalog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
