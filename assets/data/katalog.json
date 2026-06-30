@@ -1,37 +1,51 @@
 [
  {
-    "Author": "Postage BE",
-    "Titel": "F5. Pitney Bowes-GB “5000” (MV).",
+    "Kategorie": "F5. Pitney Bowes-GB “5000” (MV).",
+    "ueberthema": "Postage BE",
     "@image": "assets/img/Belgium_stamp_type_F5.jpg",
     "Dateiname": "Belgium_stamp_type_F5.jpg",
     "path extension": "assets/img/"
   },
   {
-    "Author": "Postage BR",
-    "Titel": "PV2. “Perm” (FV), 1989.",
+    "Kategorie": "PV2. “Perm” (FV), 1989.",
+    "ueberthema": "Postage BR",
     "@image": "assets/img/Bulgaria_PV2.jpg",
     "Dateiname": "Bulgaria_PV2.jpg",
     "path extension": "assets/img/"
   },
   {
-    "Author": "Postage DK",
-    "Titel": "C10.1. Postalia “MS-5” (MV).",
+    "Kategorie": "C10.1. Postalia “MS-5” (MV).",
+    "ueberthema": "Postage DK",
     "@image": "assets/img/Denmark_Type_C10_1.jpg",
     "Dateiname": "Denmark_Type_C10_1.jpg",
     "path extension": "assets/img/"
   },
   {
-    "Author": "Postage DE",
-    "Titel": "PA11.1. Hasler “F66” (MV).",
+    "Kategorie": "PA11.1. Hasler “F66” (MV).",
+    "ueberthema": "Postage DE",
     "@image": "assets/img/Germany_stamp_type_PA11point1.jpg",
     "Dateiname": "Germany_stamp_type_PA11point1.jpg",
     "path extension": "assets/img/"
   },
   {
-    "Author": "Postage EE",
-    "Titel": "CD9. Hasler “Smile” (MV).",
+    "Kategorie": "CD9. Hasler “Smile” (MV).",
+    "ueberthema": "Postage EE",
     "@image": "assets/img/Estonia_CD9.jpg",
     "Dateiname": "Estonia_CD9.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Kategorie": "B11. Frama (MV).",
+    "ueberthema": "Postage FI",
+    "@image": "assets/img/Finland_B11.jpg",
+    "Dateiname": "Finland_B11.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Kategorie": "AB11. Pitney Bowes-GB "6500" (MV), 1987.",
+    "ueberthema": "Postage FR",
+    "@image": "assets/img/France_AB11.jpg",
+    "Dateiname": "France_AB11.jpg",
     "path extension": "assets/img/"
   },
   {
