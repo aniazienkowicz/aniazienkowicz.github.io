@@ -22,5 +22,10 @@ img{
 
 .katalog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+.picture-grid {
+    width: 100%;       /* Nutzt die volle Breite des Containers */
+    height: 250px;     /* Setze hier deine gewünschte einheitliche Höhe feste */
+    object-fit: cover; /* Schneidet das Bild perfekt zu, ohne es zu verzerren */
 }
