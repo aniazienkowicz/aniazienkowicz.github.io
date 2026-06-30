@@ -2,7 +2,7 @@
 let allData = [];
 
 // Load the JSON file from the assets/data folder
-fetch('katalog.json')
+fetch('assets/data/katalog.json')
     .then(response => {
 
         // Log the HTTP response so we can check if the file was found
