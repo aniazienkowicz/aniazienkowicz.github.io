@@ -35,6 +35,34 @@
     "path extension": "assets/img/"
   },
   {
+    "Author": "Postage FI",
+    "Titel": "B11. Frama (MV).",
+    "@image": "assets/img/Finland_B11.jpg",
+    "Dateiname": "Finland_B11.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Postage FR",
+    "Titel": "AB11. Pitney Bowes-GB "6500" (MV), 1987.",
+    "@image": "assets/img/France_AB11.jpg",
+    "Dateiname": "France_AB11.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Postage GR",
+    "Titel": "D4. Pitney Bowes-GB “Automax” (MV).",
+    "@image": "assets/img/Greece_stamp_type_D4.jpg",
+    "Dateiname": "Greece_stamp_type_D4.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Postage IE",
+    "Titel": "BC6. Neopost “Electronic” (MV).",
+    "@image": "assets/img/Ireland_stamp_type_BC6.jpg",
+    "Dateiname": "Ireland_stamp_type_BC6.jpg",
+    "path extension": "assets/img/"
+  },
+  {
     "Author": "Autoscheiben",
     "Titel": "Transportetiketten",
     "@image": "assets/img/e_platzhalter.jpg",
