@@ -1,7 +1,42 @@
 [
+ {
+    "Author": "Postage BE",
+    "Titel": "F5. Pitney Bowes-GB “5000” (MV).",
+    "@image": "assets/img/Belgium_stamp_type_F5.jpg",
+    "Dateiname": "Belgium_stamp_type_F5.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Postage BR",
+    "Titel": "PV2. “Perm” (FV), 1989.",
+    "@image": "assets/img/Bulgaria_PV2.jpg",
+    "Dateiname": "Bulgaria_PV2.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Postage DK",
+    "Titel": "C10.1. Postalia “MS-5” (MV).",
+    "@image": "assets/img/Denmark_Type_C10_1.jpg",
+    "Dateiname": "Denmark_Type_C10_1.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Postage DE",
+    "Titel": "PA11.1. Hasler “F66” (MV).",
+    "@image": "assets/img/Germany_stamp_type_PA11point1.jpg",
+    "Dateiname": "Germany_stamp_type_PA11point1.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Postage EE",
+    "Titel": "CD9. Hasler “Smile” (MV).",
+    "@image": "assets/img/Estonia_CD9.jpg",
+    "Dateiname": "Estonia_CD9.jpg",
+    "path extension": "assets/img/"
+  },
   {
     "Author": "Autoscheiben",
-    "Titel": "Transportetiketten /",
+    "Titel": "Transportetiketten",
     "@image": "assets/img/e_platzhalter.jpg",
     "Dateiname": "e_platzhalter.jpg",
     "path extension": "assets/img/"
