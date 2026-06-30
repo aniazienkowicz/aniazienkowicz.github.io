@@ -1,0 +1,21 @@
+@font-face {
+  font-family:Univers Next Pro Regular;
+  src:url(/assets/fonts/UniversNextProRegular.ttf) format("truetype"),
+  font-weight:400;
+  font-style:normal;
+}
+
+@font-face {
+  font-family:Univers Next Pro Bold Cond;
+  src:url(/assets/fonts/UniversNextProBoldCond.ttf) format("truetype"),
+  font-weight:400;
+  font-style:bold;
+}
+
+@font-face {
+  font-family:Univers Next Pro Regular;
+  src:url(/assets/fonts/UniversNextProRegular.ttf) format("truetype"),
+  font-weight:400;
+}
+
+

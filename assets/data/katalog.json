@@ -1,0 +1,107 @@
+[
+ {
+    "Author": "Postage BE",
+    "Titel": "F5. Pitney Bowes-GB “5000” (MV).",
+    "@image": "assets/img/Belgium_stamp_type_F5.jpg",
+    "Dateiname": "Belgium_stamp_type_F5.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Postage BR",
+    "Titel": "PV2. “Perm” (FV), 1989.",
+    "@image": "assets/img/Bulgaria_PV2.jpg",
+    "Dateiname": "Bulgaria_PV2.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Postage DK",
+    "Titel": "C10.1. Postalia “MS-5” (MV).",
+    "@image": "assets/img/Denmark_Type_C10_1.jpg",
+    "Dateiname": "Denmark_Type_C10_1.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Postage DE",
+    "Titel": "PA11.1. Hasler “F66” (MV).",
+    "@image": "assets/img/Germany_stamp_type_PA11point1.jpg",
+    "Dateiname": "Germany_stamp_type_PA11point1.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Postage EE",
+    "Titel": "CD9. Hasler “Smile” (MV).",
+    "@image": "assets/img/Estonia_CD9.jpg",
+    "Dateiname": "Estonia_CD9.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Autoscheiben",
+    "Titel": "Transportetiketten",
+    "@image": "assets/img/e_platzhalter.jpg",
+    "Dateiname": "e_platzhalter.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "AGC Automotive",
+    "Titel": "43R-002092",
+    "@image": "assets/img/auto_6.jpg",
+    "Dateiname": "auto_6.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "TRC Duracam",
+    "Titel": "43R-00097",
+    "@image": "assets/img/auto_5.jpg",
+    "Dateiname": "auto_5.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "AGC Automotive",
+    "Titel": "43R-000098",
+    "@image": "assets/img/auto_4.jpeg",
+    "Dateiname": "auto_4.jpeg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Saint-Gobain Sekurit",
+    "Titel": "43R-001216",
+    "@image": "assets/img/auto_1.jpg",
+    "Dateiname": "auto_1.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "AGC Automotive",
+    "Titel": "43R-003635",
+    "@image": "assets/img/auto_2.jpg",
+    "Dateiname": "auto_2.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Vitro",
+    "Titel": "43R-000499",
+    "@image": "assets/img/auto_8.jpeg",
+    "Dateiname": "auto_8.jpeg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Saint-Gobain Sekurit",
+    "Titel": "43R-004553",
+    "@image": "assets/img/auto_9.jpeg",
+    "Dateiname": "auto_9.jpeg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Saint-Gobain Sekurit",
+    "Titel": "43R-000677",
+    "@image": "assets/img/auto_10.jpeg",
+    "Dateiname": "auto_10.jpeg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Saint-Gobain Sekurit",
+    "Titel": "43R-000016",
+    "@image": "assets/img/auto_11.jpg",
+    "Dateiname": "auto_11.jpg",
+    "path extension": "assets/img/"
+  }
+]

@@ -1,0 +1,26 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Univers Next Pro Regular;
+  padding: 2px;
+  font-size: 16px;
+}
+
+h1{
+  font-size: 3rem;;
+  font-style: bold;
+  text-align: center;
+
+}
+
+img{
+  width: -webkit-fill-available;
+}
+
+.katalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
