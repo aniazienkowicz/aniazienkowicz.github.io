@@ -72,15 +72,13 @@ h1 {
 
 /* Spalte 3: Rechts (Bild) */
 .card-image {
-  flex: 1;
-  display: flex;
-  justify-content: center; /* Zentriert das Bild in der rechten Spalte */
+  width: 100%;
+  margin-bottom: 15px; /* Zentriert das Bild in der rechten Spalte */
 }
 
 img {
   max-width: 100%;        /* Bild passt sich der Spalte an */
-  max-height: 180px;      /* Verhindert, dass Riesen-Bilder das Layout zerstören */
   height: auto;
-  object-fit: contain;
   display: block;
+  margin: 0 auto;
 }
