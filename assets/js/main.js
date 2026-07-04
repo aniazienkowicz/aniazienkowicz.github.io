@@ -4,7 +4,6 @@ let allData = [];
 // Load the JSON file from the assets/data folder
 fetch('assets/data/katalog.json')
     .then(response => {
-
         // Log the HTTP response so we can check if the file was found
         console.log('JSON response:', response);
 
@@ -17,7 +16,6 @@ fetch('assets/data/katalog.json')
         return response.json();
     })
     .then(data => {
-
         // Log the loaded data to check if it is an array
         console.log('Loaded JSON data:', data);
 
@@ -28,7 +26,6 @@ fetch('assets/data/katalog.json')
         renderKatalog(allData);
     })
     .catch(error => {
-
         // Log the error in the browser console
         console.error('Error loading JSON:', error);
 
@@ -86,31 +83,30 @@ function renderKatalog(items) {
             authorClass = 'unknown';
         }
 
-        // Add one card to the HTML string
+        // KORRIGIERTE REIHENFOLGE: Titel (Links) | Autor (Mitte) | Bild (Rechts)
         html += `
-    <div class="card">
-        <div class="card-content">
+            <div class="card">
+                <div class="card-content">
 
-            <!-- Spalte 1: Links (Autor) -->
-            <div class="card-author ${authorClass}">
-                ${authorText}
+                    <!-- Spalte 1: Links (Titel) -->
+                    <div class="card-title">
+                        ${item.Titel}
+                    </div>
+
+                    <!-- Spalte 2: Mitte (Inhalt / Autor) -->
+                    <div class="card-author ${authorClass}">
+                        ${authorText}
+                    </div>
+
+                    <!-- Spalte 3: Rechts (Bild) -->
+                    <div class="card-image">
+                        <img src="${item['@image']}" alt="${item.Titel}">
+                    </div>
+
+                </div>
             </div>
-
-            <!-- Spalte 2: Mitte (Titel) -->
-            <div class="card-title">
-                ${item.Titel}
-            </div>
-
-            <!-- Spalte 3: Rechts (Bild) -->
-            <div class="card-image">
-                <img src="${item['@image']}" alt="${item.Titel}">
-            </div>
-
-        </div>
-    </div>
-`;
+        `;
     }
-
 
     // Log the final generated HTML
     console.log('Generated HTML:', html);

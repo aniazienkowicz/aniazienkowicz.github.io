@@ -71,14 +71,17 @@ h1 {
 }
 
 /* Spalte 3: Rechts (Bild) */
+/* Spalte 3: Rechts (Bild) - KORRIGIERT */
 .card-image {
-  width: 100%;
-  margin-bottom: 15px; /* Zentriert das Bild in der rechten Spalte */
+  flex: 1;                 /* Nutzt den gleichen Platz (33%) wie Titel und Autor */
+  display: flex;
+  justify-content: center; /* Zentriert das Bild innerhalb der rechten Spalte */
 }
 
 img {
-  max-width: 100%;        /* Bild passt sich der Spalte an */
-  height: auto;
+  max-width: 100%;         /* Bild passt sich der Spaltenbreite an */
+  max-height: 180px;       /* Begrenzt die Höhe, damit extrem hohe Bilder das Layout nicht zerreißen */
+  height: auto;            /* Behält das Seitenverhältnis bei */
+  object-fit: contain;     /* Sorgt dafür, dass das Bild innerhalb des Rahmens gut aussieht */
   display: block;
-  margin: 0 auto;
 }
