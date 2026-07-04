@@ -88,27 +88,27 @@ function renderKatalog(items) {
 
         // Add one card to the HTML string
         html += `
-            <div class="card">
+    <div class="card">
+        <div class="card-content">
 
-
-                <div class="card-content">
-
-                    <div class="card-title">
-                        ${item.Titel}
-                    </div>
-
-                    <div class="card-image">
-                    <img src="${item['@image']}" alt="${item.Titel}">
-                    </div>
-
-                    <div class="card-author ${authorClass}">
-                        ${authorText}
-                    </div>
-
-                </div>
-
+            <!-- Spalte 1: Links (Autor) -->
+            <div class="card-author ${authorClass}">
+                ${authorText}
             </div>
-        `;
+
+            <!-- Spalte 2: Mitte (Titel) -->
+            <div class="card-title">
+                ${item.Titel}
+            </div>
+
+            <!-- Spalte 3: Rechts (Bild) -->
+            <div class="card-image">
+                <img src="${item['@image']}" alt="${item.Titel}">
+            </div>
+
+        </div>
+    </div>
+`;
     }
 
 
