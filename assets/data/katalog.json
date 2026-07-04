@@ -35,6 +35,76 @@
     "path extension": "assets/img/"
   },
   {
+    "Author": "Postage FI",
+    "Titel": "B11. Frama (MV).",
+    "@image": "assets/img/Finland_B11.jpg",
+    "Dateiname": "Finland_B11.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Postage FR",
+    "Titel": "AB11. Pitney Bowes-GB “6500” (MV), 1987.",
+    "@image": "assets/img/France_AB11.jpg",
+    "Dateiname": "France_AB11.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Postage GR",
+    "Titel": "D4. Pitney Bowes-GB “Automax” (MV).",
+    "@image": "assets/img/Greece_stamp_type_D4.jpg",
+    "Dateiname": "Greece_stamp_type_D4.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Postage IE",
+    "Titel": "BC6. Neopost “Electronic” (MV).",
+    "@image": "assets/img/Ireland_stamp_type_BC6.jpg",
+    "Dateiname": "Ireland_stamp_type_BC6.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Postage IT",
+    "Titel": "D10. Francotyp “A9000” (MV).",
+    "@image": "assets/img/Italy_stamp_type_D10B.jpg",
+    "Dateiname": "Italy_stamp_type_D10B.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Postage HR",
+    "Titel": "B9.3. Pitney Bowe-GB “6600” series (MV).",
+    "@image": "assets/img/Croatia_stamp_type_B9p2.jpg",
+    "Dateiname": "Croatia_stamp_type_B9p2.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Postage LV",
+    "Titel": "D4. Pitney Bowes-GB “Automax” (MV).",
+    "@image": "assets/img/Greece_stamp_type_D4.jpg",
+    "Dateiname": "Greece_stamp_type_D4.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Postage GR",
+    "Titel": "EF1. Hasler “Mailmaster” (MV).",
+    "@image": "assets/img/Latvia_Type_EF1Bb.jpg",
+    "Dateiname": "Latvia_Type_EF1Bb.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Postage LT",
+    "Titel": "CE2. Pitney Bowes-GB “A900” series (MV).",
+    "@image": "assets/img/Lithuania_stamp_type_CE2.jpg",
+    "Dateiname": "Lithuania_stamp_type_CE2.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Postage LU",
+    "Titel": "E1. Pitney Bowes-GB “5000” series (MV).",
+    "@image": "assets/img/Luxembourg_stamp_type_E1B.jpg",
+    "Dateiname": "Luxembourg_stamp_type_E1B.jpg",
+    "path extension": "assets/img/"
+  },
+  {
     "Author": "Autoscheiben",
     "Titel": "Transportetiketten",
     "@image": "assets/img/e_platzhalter.jpg",

@@ -1,26 +1,82 @@
-*{
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* Schützt das Layout vor unerwarteten Breiten */
 }
 
 body {
-  font-family: Univers Next Pro Regular;
-  padding: 2px;
+  font-family: "Univers Next Pro Regular", sans-serif;
+  padding: 20px;
   font-size: 16px;
+  
+  /* Zentriert den gesamten Katalog auf der Webseite */
+  display: flex;
+  justify-content: center;
 }
 
-h1{
-  font-size: 3rem;;
-  font-style: bold;
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
   text-align: center;
-
+  margin-bottom: 40px;
 }
 
-img{
-  width: -webkit-fill-available;
+/* Der Hauptcontainer (id="katalog"), der die Karten untereinander stapelt */
+#katalog, .katalog-grid {
+  display: flex;
+  flex-direction: column; /* Bringt die Karten in eine vertikale Linie */
+  align-items: center;    /* Zentriert jede Karte horizontal */
+  gap: 60px;              /* Großzügiger Abstand zwischen den einzelnen Beiträgen */
+  width: 100%;
+  max-width: 800px;       /* Verhindert, dass die Inhalte zu breit gezerrt werden */
 }
 
-.katalog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+/* Die Box für einen einzelnen Beitrag */
+.card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Der Inhalts-Container innerhalb einer Karte */
+.card-content {
+  display: flex;
+  flex-direction: column; /* Stapelt Titel, Bild und Autor untereinander */
+  align-items: center;    /* Zentriert alle drei Elemente horizontal */
+  text-align: center;     /* Zentriert den Text */
+  width: 100%;
+}
+
+/* Styling für den Titel */
+.card-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;    /* Abstand nach unten zum Bild */
+}
+
+/* Styling für den Bild-Container und das Bild selbst */
+.card-image {
+  width: 100%;
+  margin-bottom: 15px;    /* Abstand nach unten zum Autor */
+}
+
+img {
+  max-width: 100%;        /* Bild passt sich der Containerbreite an */
+  height: auto;           /* Verhindert Verzerrungen */
+  display: block;
+  margin: 0 auto;         /* Zentriert das Bild zusätzlich */
+}
+
+/* Styling für den Autor */
+.card-author {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* Styling für unbekannte Autoren (falls gewünscht) */
+.card-author.unknown {
+  font-style: italic;
+  color: #999;
 }

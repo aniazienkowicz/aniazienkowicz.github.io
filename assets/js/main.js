@@ -90,14 +90,15 @@ function renderKatalog(items) {
         html += `
             <div class="card">
 
-                <div class="card-image">
-                    <img src="${item['@image']}" alt="${item.Titel}">
-                </div>
 
                 <div class="card-content">
 
                     <div class="card-title">
                         ${item.Titel}
+                    </div>
+
+                    <div class="card-image">
+                    <img src="${item['@image']}" alt="${item.Titel}">
                     </div>
 
                     <div class="card-author ${authorClass}">
