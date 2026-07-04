@@ -1,81 +1,86 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Schützt das Layout vor unerwarteten Breiten */
+  box-sizing: border-box;
 }
 
 body {
   font-family: "Univers Next Pro Regular", sans-serif;
-  padding: 20px;
+  padding: 60px 20px 20px; /* 60px Abstand ganz oben zum Browserrand */
   font-size: 16px;
   
-  /* Zentriert den gesamten Katalog auf der Webseite */
+  /* Zentriert den gesamten Inhaltsbereich horizontal auf der Seite */
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 100px;
+  margin-bottom: 60px; /* 60px Abstand NACH UNTEN zum JSON-Inhalt */
 }
 
-/* Der Hauptcontainer (id="katalog"), der die Karten untereinander stapelt */
-/* Der Hauptcontainer stapelt die Zeilen untereinander */
-#katalog, .katalog-grid {
+/* Der Hauptcontainer direkt unter dem H1 */
+#katalog.katalog-grid {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column; /* Stapelt die Zeilen untereinander unter der Überschrift */
   gap: 40px;              /* Abstand zwischen den einzelnen Zeilen */
   width: 100%;
-  max-width: 1200px;      /* Höhere Breite, da wir jetzt 3 Spalten nebeneinander haben */
+  max-width: 1200px;      /* Optimale Breite für 3 Spalten nebeneinander */
 }
 
+/* Eine einzelne Zeile (enthält die 3 Spalten) */
 .card {
   width: 100%;
-  background: #ffffff;    /* Optional: Hintergrundfarbe für die Zeile */
-  padding: 15px 0;
+  border-bottom: 1px solid #eee; /* Optionale feine Linie zwischen den Einträgen */
+  padding-bottom: 20px;
 }
 
-/* Das 3-Spalten-Layout */
+/* Das 3-Spalten-Layout nebeneinander */
 .card-content {
   display: flex;
-  flex-direction: row;    /* Elemente nebeneinander anordnen */
-  align-items: center;    /* Zentriert alle 3 Spalten perfekt auf vertikaler Höhe */
-  justify-content: space-between; /* Verteilt den Platz gleichmäßig */
-  gap: 20px;              /* Abstand zwischen den Spalten */
+  flex-direction: row;    /* Erzwingt Spalten nebeneinander */
+  align-items: center;    /* Zentriert Titel, Autor und Bild vertikal auf gleicher Höhe */
+  justify-content: space-between;
+  gap: 30px;              /* Abstand zwischen den 3 Spalten */
   width: 100%;
 }
 
-/* Spalte 1: Titel (Links) */
+/* Spalte 1: Links (Titel) */
 .card-title {
-  flex: 1;                /* Nutzt 1 Teil des verfügbaren Platzes */
-  font-size: 1.5rem;
-  font-weight: bold;
+  flex: 1;
+  font-size: 1.2rem;
+  font-weight: regular;
   color: #333;
-  text-align: center;     /* Zentriert den Text in seiner Spalte */
+  text-align: center;     /* Zentriert den Text in der linken Spalte */
 }
 
-/* Spalte 2: Autor / Inhalt (Mitte) */
+/* Spalte 2: Mitte (Autor / Inhalt) */
 .card-author {
-  flex: 1;                /* Nutzt ebenfalls 1 Teil des Platzes */
-  font-size: 1.1rem;
-  color: #666;
+  flex: 1;
+  font-size: 1.2rem;
+  color: #333;
   text-align: center;     /* Zentriert den Text in der mittleren Spalte */
 }
 
-/* Spalte 3: Bild (Rechts) */
+.card-author.unknown {
+  font-style: italic;
+  color: #999;
+}
+
+/* Spalte 3: Rechts (Bild) */
 .card-image {
-  flex: 1;                /* Nutzt ebenfalls 1 Teil des Platzes */
+  flex: 1;
   display: flex;
-  justify-content: center; /* Zentriert das Bild in seiner Spalte */
+  justify-content: center; /* Zentriert das Bild in der rechten Spalte */
 }
 
 img {
-  max-width: 100%;        /* Bild sprengt nicht die Spaltenbreite */
-  max-height: 200px;      /* Optionale maximale Höhe, damit die Zeilen kompakt bleiben */
+  max-width: 100%;        /* Bild passt sich der Spalte an */
+  max-height: 180px;      /* Verhindert, dass Riesen-Bilder das Layout zerstören */
   height: auto;
-  object-fit: contain;    /* Verhindert Verzerrungen des Bildes */
+  object-fit: contain;
   display: block;
 }
