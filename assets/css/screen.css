@@ -11,57 +11,58 @@ body {
   
   /* Zentriert den gesamten Inhaltsbereich horizontal auf der Seite */
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 40px; /* 60px Abstand NACH UNTEN zum JSON-Inhalt */
+  margin-bottom: 60px; /* 60px Abstand NACH UNTEN zum JSON-Inhalt */
 }
 
 /* Der Hauptcontainer direkt unter dem H1 */
 #katalog.katalog-grid {
   display: flex;
   flex-direction: column; /* Stapelt die Zeilen untereinander unter der Überschrift */
-  align-items: center;
-  gap: 60px;              /* Abstand zwischen den einzelnen Zeilen */
+  gap: 40px;              /* Abstand zwischen den einzelnen Zeilen */
   width: 100%;
-  max-width: 800px;      /* Optimale Breite für 3 Spalten nebeneinander */
+  max-width: 1200px;      /* Optimale Breite für 3 Spalten nebeneinander */
 }
 
 /* Eine einzelne Zeile (enthält die 3 Spalten) */
 .card {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  border-bottom: 1px solid #eee; /* Optionale feine Linie zwischen den Einträgen */
+  padding-bottom: 20px;
 }
 
 /* Das 3-Spalten-Layout nebeneinander */
 .card-content {
   display: flex;
-  flex-direction: column;    /* Erzwingt Spalten nebeneinander */
+  flex-direction: row;    /* Erzwingt Spalten nebeneinander */
   align-items: center;    /* Zentriert Titel, Autor und Bild vertikal auf gleicher Höhe */
-  text-align: center;
+  justify-content: space-between;
+  gap: 30px;              /* Abstand zwischen den 3 Spalten */
   width: 100%;
 }
 
 /* Spalte 1: Links (Titel) */
 .card-title {
+  flex: 1;
   font-size: 1.2rem;
   font-weight: regular;
   color: #333;
-  margin-bottom: 15px;     /* Zentriert den Text in der linken Spalte */
+  text-align: center;     /* Zentriert den Text in der linken Spalte */
 }
 
 /* Spalte 2: Mitte (Autor / Inhalt) */
 .card-author {
+  flex: 1;
   font-size: 1.2rem;
-  font-weight: regular;
   color: #333;
-  margin-bottom: 15px;     /* Zentriert den Text in der mittleren Spalte */
+  text-align: center;     /* Zentriert den Text in der mittleren Spalte */
 }
 
 .card-author.unknown {
@@ -71,8 +72,9 @@ h1 {
 
 /* Spalte 3: Rechts (Bild) */
 .card-image {
-  width: 100%;
-  margin-bottom: 15px; /* Zentriert das Bild in der rechten Spalte */
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Zentriert das Bild in der rechten Spalte */
 }
 
 img {
