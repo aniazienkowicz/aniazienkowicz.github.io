@@ -1,16 +1,18 @@
 [
- {
+  {
     "Author": "Postage BE",
     "Titel": "F5. Pitney Bowes-GB “5000” (MV).",
     "Thema": "Postage",
+    "Category": "Transport Labeling",
     "@image": "assets/img/Belgium_stamp_type_F5.jpg",
     "Dateiname": "Belgium_stamp_type_F5.jpg",
     "path extension": "assets/img/"
   },
   {
-    "Author": "Postage BR",
+    "Author": "Postage BG",
     "Titel": "PV2. “Perm” (FV), 1989.",
     "Thema": "Postage",
+    "Category": "Transport Labeling",
     "@image": "assets/img/Bulgaria_PV2.jpg",
     "Dateiname": "Bulgaria_PV2.jpg",
     "path extension": "assets/img/"
@@ -19,6 +21,7 @@
     "Author": "Postage DK",
     "Titel": "C10.1. Postalia “MS-5” (MV).",
     "Thema": "Postage",
+    "Category": "Transport Labeling",
     "@image": "assets/img/Denmark_Type_C10_1.jpg",
     "Dateiname": "Denmark_Type_C10_1.jpg",
     "path extension": "assets/img/"
@@ -27,6 +30,7 @@
     "Author": "Postage DE",
     "Titel": "PA11.1. Hasler “F66” (MV).",
     "Thema": "Postage",
+    "Category": "Transport Labeling",
     "@image": "assets/img/Germany_stamp_type_PA11point1.jpg",
     "Dateiname": "Germany_stamp_type_PA11point1.jpg",
     "path extension": "assets/img/"
@@ -35,6 +39,7 @@
     "Author": "Postage EE",
     "Titel": "CD9. Hasler “Smile” (MV).",
     "Thema": "Postage",
+    "Category": "Transport Labeling",
     "@image": "assets/img/Estonia_CD9.jpg",
     "Dateiname": "Estonia_CD9.jpg",
     "path extension": "assets/img/"
@@ -43,6 +48,7 @@
     "Author": "Postage FI",
     "Titel": "B11. Frama (MV).",
     "Thema": "Postage",
+    "Category": "Transport Labeling",
     "@image": "assets/img/Finland_B11.jpg",
     "Dateiname": "Finland_B11.jpg",
     "path extension": "assets/img/"
@@ -51,6 +57,7 @@
     "Author": "Postage FR",
     "Titel": "AB11. Pitney Bowes-GB “6500” (MV), 1987.",
     "Thema": "Postage",
+    "Category": "Transport Labeling",
     "@image": "assets/img/France_AB11.jpg",
     "Dateiname": "France_AB11.jpg",
     "path extension": "assets/img/"
@@ -59,6 +66,7 @@
     "Author": "Postage GR",
     "Titel": "D4. Pitney Bowes-GB “Automax” (MV).",
     "Thema": "Postage",
+    "Category": "Transport Labeling",
     "@image": "assets/img/Greece_stamp_type_D4.jpg",
     "Dateiname": "Greece_stamp_type_D4.jpg",
     "path extension": "assets/img/"
@@ -67,6 +75,7 @@
     "Author": "Postage IE",
     "Titel": "BC6. Neopost “Electronic” (MV).",
     "Thema": "Postage",
+    "Category": "Transport Labeling",
     "@image": "assets/img/Ireland_stamp_type_BC6.jpg",
     "Dateiname": "Ireland_stamp_type_BC6.jpg",
     "path extension": "assets/img/"
@@ -75,6 +84,7 @@
     "Author": "Postage IT",
     "Titel": "D10. Francotyp “A9000” (MV).",
     "Thema": "Postage",
+    "Category": "Transport Labeling",
     "@image": "assets/img/Italy_stamp_type_D10B.jpg",
     "Dateiname": "Italy_stamp_type_D10B.jpg",
     "path extension": "assets/img/"
@@ -83,22 +93,16 @@
     "Author": "Postage HR",
     "Titel": "B9.3. Pitney Bowe-GB “6600” series (MV).",
     "Thema": "Postage",
+    "Category": "Transport Labeling",
     "@image": "assets/img/Croatia_stamp_type_B9p2.jpg",
     "Dateiname": "Croatia_stamp_type_B9p2.jpg",
     "path extension": "assets/img/"
   },
   {
     "Author": "Postage LV",
-    "Titel": "D4. Pitney Bowes-GB “Automax” (MV).",
-    "Thema": "Postage",
-    "@image": "assets/img/Greece_stamp_type_D4.jpg",
-    "Dateiname": "Greece_stamp_type_D4.jpg",
-    "path extension": "assets/img/"
-  },
-  {
-    "Author": "Postage GR",
     "Titel": "EF1. Hasler “Mailmaster” (MV).",
     "Thema": "Postage",
+    "Category": "Transport Labeling",
     "@image": "assets/img/Latvia_Type_EF1Bb.jpg",
     "Dateiname": "Latvia_Type_EF1Bb.jpg",
     "path extension": "assets/img/"
@@ -107,6 +111,7 @@
     "Author": "Postage LT",
     "Titel": "CE2. Pitney Bowes-GB “A900” series (MV).",
     "Thema": "Postage",
+    "Category": "Transport Labeling",
     "@image": "assets/img/Lithuania_stamp_type_CE2.jpg",
     "Dateiname": "Lithuania_stamp_type_CE2.jpg",
     "path extension": "assets/img/"
@@ -115,88 +120,234 @@
     "Author": "Postage LU",
     "Titel": "E1. Pitney Bowes-GB “5000” series (MV).",
     "Thema": "Postage",
+    "Category": "Transport Labeling",
     "@image": "assets/img/Luxembourg_stamp_type_E1B.jpg",
     "Dateiname": "Luxembourg_stamp_type_E1B.jpg",
     "path extension": "assets/img/"
   },
   {
-    "Author": "Autoscheiben",
-    "Titel": "Transportetiketten",
-    "Thema": "Automotive Glass",
-    "@image": "assets/img/e_platzhalter.jpg",
-    "Dateiname": "e_platzhalter.jpg",
+    "Author": "Postage MT",
+    "Titel": "A9. Pitney Bowes-GB “A900” (MV).",
+    "Thema": "Postage",
+    "Category": "Transport Labeling",
+    "@image": "assets/img/Malta_stamp_type_A9.jpg",
+    "Dateiname": "Malta_stamp_type_A9.jpg",
     "path extension": "assets/img/"
   },
   {
-    "Author": "AGC Automotive",
-    "Titel": "43R-002092",
-    "Thema": "Automotive Glass",
-    "@image": "assets/img/auto_6.jpg",
-    "Dateiname": "auto_6.jpg",
+    "Author": "Postage NL",
+    "Titel": "I9. Frama “Sensonic” (digital).",
+    "Thema": "Postage",
+    "Category": "Transport Labeling",
+    "@image": "assets/img/Netherlands_stamp_type_I9.jpg",
+    "Dateiname": "Netherlands_stamp_type_I9.jpg",
     "path extension": "assets/img/"
   },
   {
-    "Author": "TRC Duracam",
-    "Titel": "43R-00097",
-    "Thema": "Automotive Glass",
-    "@image": "assets/img/auto_5.jpg",
-    "Dateiname": "auto_5.jpg",
+    "Author": "Postage AT",
+    "Titel": "HA4.2. Pitney Bowes “A900 series” (MV).",
+    "Thema": "Postage",
+    "Category": "Transport Labeling",
+    "@image": "assets/img/Austria_H10.jpg",
+    "Dateiname": "Austria_H10.jpg",
     "path extension": "assets/img/"
   },
   {
-    "Author": "AGC Automotive",
-    "Titel": "43R-000098",
-    "Thema": "Automotive Glass",
-    "@image": "assets/img/auto_4.jpeg",
-    "Dateiname": "auto_4.jpeg",
+    "Author": "Postage PL",
+    "Titel": "D1. Pitney Bowes “5300” (MV), 1973.",
+    "Thema": "Postage",
+    "Category": "Transport Labeling",
+    "@image": "assets/img/Poland_D1.jpg",
+    "Dateiname": "Poland_D1.jpg",
     "path extension": "assets/img/"
   },
   {
-    "Author": "Saint-Gobain Sekurit",
-    "Titel": "43R-001216",
-    "Thema": "Automotive Glass",
-    "@image": "assets/img/auto_1.jpg",
-    "Dateiname": "auto_1.jpg",
+    "Author": "Postage PT",
+    "Titel": "CB1. Pitney Bowes “6300” (MV).",
+    "Thema": "Postage",
+    "Category": "Transport Labeling",
+    "@image": "assets/img/Portugal_stamp_type_CB1A.jpg",
+    "Dateiname": "Portugal_stamp_type_CB1A.jpg",
     "path extension": "assets/img/"
   },
   {
-    "Author": "AGC Automotive",
-    "Titel": "43R-003635",
-    "Thema": "Automotive Glass",
-    "@image": "assets/img/auto_2.jpg",
-    "Dateiname": "auto_2.jpg",
+    "Author": "Postage RO",
+    "Titel": "FB3. Audion “Gamma Primavera” (MV).",
+    "Thema": "Postage",
+    "Category": "Transport Labeling",
+    "@image": "assets/img/Romania_stamp_type_FB3.jpg",
+    "Dateiname": "Romania_stamp_type_FB3.jpg",
     "path extension": "assets/img/"
   },
   {
-    "Author": "Vitro",
-    "Titel": "43R-000499",
-    "Thema": "Automotive Glass",
-    "@image": "assets/img/auto_8.jpeg",
-    "Dateiname": "auto_8.jpeg",
+    "Author": "Postage SE",
+    "Titel": "D4.2. Postalia “MS5/WK4” (MV).",
+    "Thema": "Postage",
+    "Category": "Transport Labeling",
+    "@image": "assets/img/Sweden_stamp_type_D4point2.jpg",
+    "Dateiname": "Sweden_stamp_type_D4point2.jpg",
     "path extension": "assets/img/"
   },
   {
-    "Author": "Saint-Gobain Sekurit",
-    "Titel": "43R-004553",
-    "Thema": "Automotive Glass",
-    "@image": "assets/img/auto_9.jpeg",
-    "Dateiname": "auto_9.jpeg",
+    "Author": "Postage SK",
+    "Titel": "BB3. Frama “M/E bzw 100” (MV).",
+    "Thema": "Postage",
+    "Category": "Transport Labeling",
+    "@image": "assets/img/Slovakia_stamp_type_BB3.jpg",
+    "Dateiname": "Slovakia_stamp_type_BB3.jpg",
     "path extension": "assets/img/"
   },
   {
-    "Author": "Saint-Gobain Sekurit",
-    "Titel": "43R-000677",
-    "Thema": "Automotive Glass",
-    "@image": "assets/img/auto_10.jpeg",
-    "Dateiname": "auto_10.jpeg",
+    "Author": "Postage SL",
+    "Titel": "A2.6. Pitney Bowes-GB “6900” series (MV).",
+    "Thema": "Postage",
+    "Category": "Transport Labeling",
+    "@image": "assets/img/Slovenia_stamp_type_A8.png",
+    "Dateiname": "Slovenia_stamp_type_A8.png",
     "path extension": "assets/img/"
   },
   {
-    "Author": "Saint-Gobain Sekurit",
-    "Titel": "43R-000016",
+    "Author": "Postage ES",
+    "Titel": "C7. Neopost “205 / 2205” (MV).",
+    "Thema": "Postage",
+    "Category": "Transport Labeling",
+    "@image": "assets/img/Spain_stamp_type_C7.jpg",
+    "Dateiname": "Spain_stamp_type_C7.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Postage CZ",
+    "Titel": "AA2. Francotyp-Postalia “EFS3000/NEF300” (MV).",
+    "Thema": "Postage",
+    "Category": "Transport Labeling",
+    "@image": "assets/img/Czech_Republic_AA2.jpg",
+    "Dateiname": "Czech_Republic_AA2.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Postage HU",
+    "Titel": "BB9. Secap “Alpha” or “Minipost” (digital).",
+    "Thema": "Postage",
+    "Category": "Transport Labeling",
+    "@image": "assets/img/Hungary_Type_BB9.jpg",
+    "Dateiname": "Hungary_Type_BB9.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Postage CY",
+    "Titel": "A12. Hasler “Mailmaster” (MV).",
+    "Thema": "Postage",
+    "Category": "Transport Labeling",
+    "@image": "assets/img/Cyprus_Type_A12.jpg",
+    "Dateiname": "Cyprus_Type_A12.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "43R-002092",
+    "Titel": "AGC Automotive",
     "Thema": "Automotive Glass",
-    "@image": "assets/img/auto_11.jpg",
-    "Dateiname": "auto_11.jpg",
+    "Category": "Product Labeling",
+    "@image": "assets/img/glasscheibe.jpg",
+    "Dateiname": "glasscheibe.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "43R-00087",
+    "Titel": "Shatterprufe",
+    "Thema": "Automotive Glass",
+    "Category": "Product Labeling",
+    "@image": "assets/img/glasscheibe2.jpg",
+    "Dateiname": "glasscheibe2.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "43R-001853",
+    "Titel": "XYG",
+    "Thema": "Automotive Glass",
+    "Category": "Product Labeling",
+    "@image": "assets/img/glasscheibe3.jpg",
+    "Dateiname": "glasscheibe3.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "43R-00097",
+    "Titel": "TRC-DURACAM",
+    "Thema": "Automotive Glass",
+    "Category": "Product Labeling",
+    "@image": "assets/img/glasscheibe4.jpg",
+    "Dateiname": "glasscheibe4.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "43R-001051",
+    "Titel": "Saint-Gobain Sekurit",
+    "Thema": "Automotive Glass",
+    "Category": "Product Labeling",
+    "@image": "assets/img/glasscheibe5.jpg",
+    "Dateiname": "glasscheibe5.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "43R-000098",
+    "Titel": "AGC Automotive",
+    "Thema": "Automotive Glass",
+    "Category": "Product Labeling",
+    "@image": "assets/img/glasscheibe6.jpg",
+    "Dateiname": "glasscheibe6.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "43R-003635",
+    "Titel": "AGC Automotive",
+    "Thema": "Automotive Glass",
+    "Category": "Product Labeling",
+    "@image": "assets/img/glasscheibe7.jpg",
+    "Dateiname": "glasscheibe7.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "43R-000499",
+    "Titel": "Vitro",
+    "Thema": "Automotive Glass",
+    "Category": "Product Labeling",
+    "@image": "assets/img/glasscheibe8.jpg",
+    "Dateiname": "glasscheibe8.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "43R-001596",
+    "Titel": "Pilkington",
+    "Thema": "Automotive Glass",
+    "Category": "Product Labeling",
+    "@image": "assets/img/glasscheibe9.jpg",
+    "Dateiname": "glasscheibe9.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "43R-000677",
+    "Titel": "Saint-Gobain Sekurit",
+    "Thema": "Automotive Glass",
+    "Category": "Product Labeling",
+    "@image": "assets/img/glasscheibe10.jpg",
+    "Dateiname": "glasscheibe10.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "43R-01391",
+    "Titel": "Saint-Gobain Sekurit",
+    "Thema": "Automotive Glass",
+    "Category": "Product Labeling",
+    "@image": "assets/img/glasscheibe11.jpg",
+    "Dateiname": "glasscheibe11.jpg",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "43R-000016",
+    "Titel": "Saint-Gobain Sekurit",
+    "Thema": "Automotive Glass",
+    "Category": "Product Labeling",
+    "@image": "assets/img/glasscheibe12.jpg",
+    "Dateiname": "glasscheibe12.jpg",
     "path extension": "assets/img/"
   }
 ]

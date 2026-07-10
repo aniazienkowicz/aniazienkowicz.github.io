@@ -1,18 +1,23 @@
 let allData = [];
+// Da Color Thief über das HTML geladen wird, greifen wir direkt auf das globale Objekt zu
 const colorThief = new ColorThief(); 
 
 console.log("[System] main.js erfolgreich geladen. Starte JSON-Fetch...");
 
-// 2. JSON-Datei laden
+// 2. JSON-Datei laden (mit absolutem Pfad)
 fetch('/assets/data/katalog.json')
     .then(response => {
-        if (!response.ok) throw new Error('JSON-Datei konnte nicht geladen werden');
+        if (!response.ok) throw new Error('JSON-Datei konnte nicht geladen werden (404/500)');
         return response.json();
     })
     .then(data => {
         allData = data;
-        console.log(`[System] JSON erfolgreich geladen. ${data.length} Einträge gefunden.`);
+        console.log(`[System] JSON erfolgreich geladen. ${data.length} Einträge gefunden. Starte Rendering...`);
+        
+        // Initial alle Einträge anzeigen
         renderKatalog(allData);
+        // Filter-Logik aktivieren
+        setupFilter();
     })
     .catch(error => {
         console.error('--- KRITISCHER FEHLER BEIM LADEN ---', error);
@@ -20,14 +25,45 @@ fetch('/assets/data/katalog.json')
         if (katElem) katElem.innerHTML = '<div class="loading">Fehler beim Laden der Daten</div>';
     });
 
-// 3. Katalog im HTML rendern
+// NEU: Funktion zur Steuerung der Filter-Buttons
+function setupFilter() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            // 1. "active"-Klasse bei allen Buttons entfernen und beim geklickten hinzufügen
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            e.target.classList.add('active');
+            
+            // 2. Ausgewählten Filter-Wert auslesen
+            const selectedFilter = e.target.getAttribute('data-filter');
+            
+            // 3. Daten filtern
+            if (selectedFilter === 'all') {
+                renderKatalog(allData); // Zeige alles
+            } else {
+                const filteredData = allData.filter(item => {
+                    // Falls dein JSON-Feld anders heißt (z.B. item.Kategorie), hier anpassen!
+                    return item.Category === selectedFilter || item.Kategorie === selectedFilter;
+                });
+                renderKatalog(filteredData); // Zeige nur Treffer
+            }
+        });
+    });
+}
+
+// 3. Katalog im HTML rendern (Bleibt gleich, baut aber bei jedem Filter die Karten neu)
 function renderKatalog(items) {
     const katalog = document.getElementById('katalog');
     if (!katalog || !Array.isArray(items)) return;
 
     let html = '';
 
-    // HTML-String bauen
+    if (items.length === 0) {
+        katalog.innerHTML = '<div class="no-results">Keine Einträge für diesen Filter gefunden.</div>';
+        return;
+    }
+
     items.forEach((item, i) => {
         let authorText = item.Author === '-' ? 'Autor unbekannt' : item.Author;
         let authorClass = item.Author === '-' ? 'unknown' : '';
@@ -38,7 +74,7 @@ function renderKatalog(items) {
                     <div class="card-title">${item.Titel}</div>
                     <div class="card-author ${authorClass}">${authorText}</div>
                     <div class="card-image">
-                        <img src="${item['@image']}" alt="${item.Titel}">
+                        <img src="${item['@image']}" alt="${item.Titel}" crossorigin="anonymous">
                     </div>
                 </div>
             </div>
@@ -47,57 +83,71 @@ function renderKatalog(items) {
 
     katalog.innerHTML = html;
 
-    // 4. Karten holen und Hover-Effekte hinzufügen
+    // 4. Karten holen und Hover-Effekte mit Farberkennung hinzufügen (Abschnitt unverändert)
     const cards = katalog.querySelectorAll('.card');
-    cards.forEach((card, i) => {
+    cards.forEach((card) => {
         const img = card.querySelector('.card-image img');
         const title = card.querySelector('.card-title');
         const author = card.querySelector('.card-author');
 
         if (!img) return;
 
-        // Hilfsfunktion, um die Farbe sicher zu setzen
-        function applyColor() {
+        function getTargetColor(callback) {
             try {
                 if (img.complete && img.naturalWidth > 0) {
-                    let [r, g, b] = colorThief.getColor(img);
+                    const palette = colorThief.getPalette(img, 8);
+                    let chosenColor = null;
                     
-                    // Helligkeit berechnen
+                    for (let i = 0; i < palette.length; i++) {
+                        const [r, g, b] = palette[i];
+                        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+                        if (brightness < 220) {
+                            chosenColor = [r, g, b];
+                            break;
+                        }
+                    }
+                    
+                    if (!chosenColor) chosenColor = palette[0]; 
+                    
+                    let [r, g, b] = chosenColor;
                     const brightness = (r * 299 + g * 587 + b * 114) / 1000;
-                    
-                    // Wenn zu hell, mathematisch abdunkeln
                     if (brightness > 130) {
-                        const faktor = 0.4; // 0.4 dunkelt noch etwas stärker ab für bessere Lesbarkeit
+                        const faktor = 0.5;
                         r = Math.floor(r * faktor);
                         g = Math.floor(g * faktor);
                         b = Math.floor(b * faktor);
                     }
 
-                    title.style.color = `rgb(${r}, ${g}, ${b})`;
-                    author.style.color = `rgb(${r}, ${g}, ${b})`;
+                    callback(`rgb(${r}, ${g}, ${b})`);
                 }
             } catch (err) {
-                // Fallback, falls CORS oder ColorThief blockiert
-                title.style.color = '#222222'; 
-                author.style.color = '#222222';
+                console.warn("Farbextraktion fehlgeschlagen. Nutze Fallback.");
+                callback('#444444');
             }
         }
 
-        // Event-Listener für Hover
-        card.addEventListener('mouseenter', () => {
+        title.addEventListener('mouseenter', () => {
             if (img.complete) {
-                applyColor();
+                getTargetColor((color) => { title.style.color = color; });
             } else {
                 img.addEventListener('load', function onImgLoad() {
-                    applyColor();
+                    getTargetColor((color) => { title.style.color = color; });
                     img.removeEventListener('load', onImgLoad);
                 });
             }
         });
+        title.addEventListener('mouseleave', () => { title.style.color = ''; });
 
-        card.addEventListener('mouseleave', () => {
-            title.style.color = '';  
-            author.style.color = '';
+        author.addEventListener('mouseenter', () => {
+            if (img.complete) {
+                getTargetColor((color) => { author.style.color = color; });
+            } else {
+                img.addEventListener('load', function onImgLoad() {
+                    getTargetColor((color) => { author.style.color = color; });
+                    img.removeEventListener('load', onImgLoad);
+                });
+            }
         });
+        author.addEventListener('mouseleave', () => { author.style.color = ''; });
     });
 }

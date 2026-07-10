@@ -1,4 +1,6 @@
-/* --- CSS Reset & Variablen-Vorbereitung --- */
+/* ==========================================================================
+   1. CSS RESET & VARIABLEN-VORBEREITUNG
+   ========================================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +23,41 @@ h1 {
   margin-bottom: 60px;
 }
 
-/* --- Hauptcontainer --- */
+/* ==========================================================================
+   2. FILTER-LEISTE (BUTTONS)
+   ========================================================================== */
+.filter-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0 40px; /* Leicht erhöhter Abstand nach unten */
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Stil für den gerade aktiven Filter-Button */
+.filter-btn.active {
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+/* ==========================================================================
+   3. HAUPTCONTAINER & GRID-LAYOUT (3 SPALTEN)
+   ========================================================================== */
 #katalog.katalog-grid {
   display: flex;
   flex-direction: column;
@@ -30,68 +66,57 @@ h1 {
   max-width: 1200px;
 }
 
-/* Eine einzelne Zeile */
+/* Eine einzelne Zeile im Katalog */
 .card {
   width: 100%;
   border-bottom: 1px solid #eee;
-  padding: 20px;
+  padding: 10px; /* Hier verringert für flachere Zeilen */
   border-radius: 8px;
   transition: background-color 0.4s ease; 
 }
 
-/* Das 3-Spalten-Layout */
+/* 
+   Das 3-Spalten-Layout als Grid. 
+   1fr 1fr 1fr teilt die Karte in drei exakt gleich große Zonen auf (jeweils 33.33%).
+   align-items: center sorgt für die mathematisch exakte vertikale Zentrierung.
+*/
 .card-content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center; 
   gap: 30px;
   width: 100%;
 }
 
-/* --- Spalten Basis-Einstellungen --- */
+/* ==========================================================================
+   4. SPALTEN BASIS-EINSTELLUNGEN & AUSRICHTUNG
+   ========================================================================== */
 .card-title,
 .card-author,
 .card-image {
-  flex: 1;
-  text-align: center;
+  width: 100%;
+  display: flex;
+  align-items: center; /* Vertikale Zentrierung des Inhalts innerhalb der Spaltenbox */
+  
   transform: scale(1.0);
   transition: transform 0.25s ease, font-weight 0.25s ease, color 0.25s ease;
   position: relative;
   backface-visibility: hidden;
 }
 
-/* --- HOVER EFFEKTE --- */
-
-/* Wenn die Karte gehovert wird, verändern sich Textgrößen */
-.card:hover .card-title,
-.card:hover .card-author {
-  font-weight: bold;
-  transform: scale(1.04);    
-  cursor: pointer;
-  opacity: 1;
-}
-
-/* Wenn die Maus über die Karte fährt, skaliert sich das Bild */
-.card:hover .card-image img {
-  transform: scale(1.15);
-}
-
-/* Übergang für alle Änderungen (Sorgt dafür, dass das JS-Färben weich einblendet) */
-.card-title,
-.card-author,
-.card-image img {
-  transition: transform 0.25s ease, font-weight 0.25s ease, color 0.25s ease;
-}
-
-/* --- Standard-Farben (wenn NICHT gehovert wird) --- */
+/* 1. Spalte: Titel zentriert in seiner linken Zone */
 .card-title {
+  justify-content: center; 
+  text-align: center;
   font-size: 1.2rem;
   font-weight: normal;
   color: #333;
 }
 
+/* 2. Spalte: Autor zentriert in der mittleren Zone */
 .card-author {
+  justify-content: center; 
+  text-align: center;
   font-size: 1.2rem;
   color: #333;
 }
@@ -101,15 +126,56 @@ h1 {
   color: #999;
 }
 
+/* 3. Spalte: Bild-Container drückt das Bild ganz nach rechts außen */
 .card-image {
-  display: flex;
-  justify-content: center;
+  justify-content: flex-end; 
 }
 
+/* ==========================================================================
+   5. BILD-STYLING & FEHLER-MELDUNGEN
+   ========================================================================== */
 img {
   max-width: 100%;
   max-height: 180px;
   height: auto;
   object-fit: contain;
-  display: block;
+  display: block; /* Verhindert den Baseline-Shift (Abstand nach unten) */
+}
+
+.no-results, .loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* ==========================================================================
+   6. HOVER EFFEKTE (INDIVIDUELL)
+   ========================================================================== */
+
+/* Sorgt dafür, dass das JS-Färben und die Transformationen weich einblenden */
+.card-title,
+.card-author,
+.card-image img {
+  transition: transform 0.25s ease, font-weight 0.25s ease, color 0.25s ease;
+}
+
+/* Nur der Titel reagiert, wenn man direkt darüber fährt */
+.card-title:hover {
+  font-weight: bold;
+  transform: scale(1.15);    
+  cursor: pointer;
+}
+
+/* Nur der Autor reagiert, wenn man direkt darüber fährt */
+.card-author:hover {
+  font-weight: bold;
+  transform: scale(1.15);    
+  cursor: pointer;
+}
+
+/* Nur das Bild reagiert, wenn man direkt über das Bild fährt */
+.card-image img:hover {
+  transform: scale(1.15);
+  cursor: pointer;
 }
