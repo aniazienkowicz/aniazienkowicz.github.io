@@ -26,7 +26,6 @@ fetch('/assets/data/katalog.json')
     });
 
 // 3. Katalog im HTML rendern
-// 3. Katalog im HTML rendern
 function renderKatalog(items) {
     const katalog = document.getElementById('katalog');
     if (!katalog || !Array.isArray(items)) return;
@@ -55,49 +54,47 @@ function renderKatalog(items) {
 
     // 4. Farben über einen unsichtbaren CORS-Bypass extrahieren
     items.forEach((item, i) => {
-        const card = document.getElementById(`card-${i}`);
-        if (!card) return;
-
+        // 3. Jetzt die Karten holen und die Hover-Effekte hinzufügen
+    const cards = katalog.querySelectorAll('.card');
+    cards.forEach((card) => {
         const img = card.querySelector('.card-image img');
+        const title = card.querySelector('.card-title');
+        const author = card.querySelector('.card-author');
+
         if (!img) return;
 
-        const setFallbackColor = () => {
-            const fallbackFarben = ['255,87,34', '76,175,80', '233,30,99', '156,39,176', '0,188,212'];
-            const zufallsFarbe = fallbackFarben[Math.floor(Math.random() * fallbackFarben.length)];
-            card.style.setProperty('--hover-color-rgb', zufallsFarbe);
-        };
+        // Hilfsfunktion, um die Farbe sicher zu setzen
+        function applyColor() {
+            try {
+                if (img.complete && img.naturalWidth > 0) {
+                    const [r, g, b] = colorThief.getColor(img);
+                    title.style.color = `rgb(${r}, ${g}, ${b})`;
+                    author.style.color = `rgb(${r}, ${g}, ${b})`;
+                }
+            } catch (err) {
+                // FALLBACK: Wenn der Browser das Bild wegen CORS blockiert,
+                // nutzen wir stattdessen hier eine feste Farbe (z.B. Dunkelgrau #444444)
+                console.warn("CORS blockiert Farbextraktion. Nutze Fallback-Farbe.");
+                title.style.color = '#444444'; 
+                author.style.color = '#444444';
+            }
+        }
 
-        // Wir laden das Bild im Hintergrund als Blob, um CORS komplett auszuhebeln
-        fetch(img.src)
-            .then(response => {
-                if (!response.ok) throw new Error();
-                return response.blob();
-            })
-            .then(blob => {
-                const reader = new FileReader();
-                reader.onloadend = function () {
-                    // Erstellt ein unsichtbares Hilfs-Bild mit Base64-Daten
-                    const tempImg = new Image();
-                    tempImg.src = reader.result;
-                    tempImg.onload = function () {
-                        try {
-                            const color = colorThief.getColor(tempImg);
-                            if (color && !isNaN(color[0])) {
-                                console.log(`[Erfolg] Card ${i}: Farbe ist rgb(${color.join(',')})`);
-                                card.style.setProperty('--hover-color-rgb', `${color[0]}, ${color[1]}, ${color[2]}`);
-                            } else {
-                                setFallbackColor();
-                            }
-                        } catch (e) {
-                            setFallbackColor();
-                        }
-                    };
-                };
-                reader.readAsDataURL(blob);
-            })
-            .catch(() => {
-                // Falls selbst das lokale Fetch fehlschlägt, sofort Fallback nutzen
-                setFallbackColor();
-            });
+        // Sobald die Maus über die KARTE fährt
+        card.addEventListener('mouseenter', () => {
+            if (img.complete) {
+                applyColor();
+            } else {
+                img.addEventListener('load', function onImgLoad() {
+                    applyColor();
+                    img.removeEventListener('load', onImgLoad);
+                });
+            }
+        });
+
+        // Sobald die Maus die Karte verlässt -> zurücksetzen
+        card.addEventListener('mouseleave', () => {
+            title.style.color = '';  
+            author.style.color = '';
+        });
     });
-}
