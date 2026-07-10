@@ -58,19 +58,39 @@ function renderKatalog(items) {
         if (!img) return;
 
         // Hilfsfunktion, um die Farbe sicher zu setzen
-        function applyColor() {
-            try {
-                if (img.complete && img.naturalWidth > 0) {
-                    const [r, g, b] = colorThief.getColor(img);
-                    title.style.color = `rgb(${r}, ${g}, ${b})`;
-                    author.style.color = `rgb(${r}, ${g}, ${b})`;
-                }
-            } catch (err) {
-                // FALLBACK: Wenn CORS blockiert (z.B. lokal ohne Server), nutzen wir Dunkelgrau
-                console.warn("Farbextraktion blockiert/fehlgeschlagen. Nutze Fallback-Farbe.");
-                title.style.color = '#444444'; 
-                author.style.color = '#444444';
+        // Hilfsfunktion, um die Farbe sicher zu setzen und automatisch abzudunkeln, wenn sie zu hell ist
+function applyColor() {
+    try {
+        if (img.complete && img.naturalWidth > 0) {
+            let [r, g, b] = colorThief.getColor(img);
+            
+            // --- DIE MAGIE: Helligkeit berechnen (Luminanz) ---
+            // Diese Formel berechnet, wie hell die Farbe für das menschliche Auge wirkt
+            const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+            
+            // Wenn der Wert über 130 ist, ist die Farbe zu hell für weißen Hintergrund
+            if (brightness > 130) {
+                console.log(`[System] Farbe für "${item.Titel}" zu hell (${Math.round(brightness)}). Dunkle ab...`);
+                
+                // Wir dunkeln die Farbe ab, indem wir die RGB-Werte prozentual reduzieren
+                // 0.5 macht die Farbe um 50% dunkler. Du kannst mit dem Wert spielen (z.B. 0.4 oder 0.6)
+                const faktor = 0.5; 
+                r = Math.floor(r * faktor);
+                g = Math.floor(g * faktor);
+                b = Math.floor(b * faktor);
             }
+
+            // Farbe auf Text anwenden
+            title.style.color = `rgb(${r}, ${g}, ${b})`;
+            author.style.color = `rgb(${r}, ${g}, ${b})`;
+        }
+    } catch (err) {
+        // FALLBACK: Wenn etwas schiefgeht, nutzen wir ein sattes, gut lesbares Dunkelgrau
+        console.warn("Farbextraktion fehlgeschlagen. Nutze dunklen Fallback.");
+        title.style.color = '#222222'; 
+        author.style.color = '#222222';
+    }
+}
         }
 
         // Sobald die Maus über die KARTE fährt
