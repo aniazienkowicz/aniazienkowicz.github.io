@@ -1,12 +1,8 @@
-// main.js - GANZ OBEN ABÄNDERN:
-import ColorThief from './color-thief.mjs'; // Lädt die lokale Datei aus dem gleichen Ordner
-
 let allData = [];
+// Da Color Thief über das HTML geladen wird, greifen wir direkt auf das globale Objekt zu
 const colorThief = new ColorThief(); 
 
 console.log("[System] main.js erfolgreich geladen. Starte JSON-Fetch...");
-
-// ... (Der gesamte Rest deiner main.js bleibt genau so, wie ich ihn dir im letzten Schritt gegeben habe!)
 
 // 2. JSON-Datei laden (mit absolutem Pfad)
 fetch('/assets/data/katalog.json')
@@ -32,7 +28,7 @@ function renderKatalog(items) {
 
     let html = '';
 
-    // HTML-String bauen (ohne das problematische crossorigin-Attribut)
+    // HTML-String bauen
     items.forEach((item, i) => {
         let authorText = item.Author === '-' ? 'Autor unbekannt' : item.Author;
         let authorClass = item.Author === '-' ? 'unknown' : '';
@@ -52,9 +48,7 @@ function renderKatalog(items) {
 
     katalog.innerHTML = html;
 
-    // 4. Farben über einen unsichtbaren CORS-Bypass extrahieren
-    items.forEach((item, i) => {
-        // 3. Jetzt die Karten holen und die Hover-Effekte hinzufügen
+    // 4. Karten holen und Hover-Effekte mit Farberkennung hinzufügen
     const cards = katalog.querySelectorAll('.card');
     cards.forEach((card) => {
         const img = card.querySelector('.card-image img');
@@ -72,9 +66,8 @@ function renderKatalog(items) {
                     author.style.color = `rgb(${r}, ${g}, ${b})`;
                 }
             } catch (err) {
-                // FALLBACK: Wenn der Browser das Bild wegen CORS blockiert,
-                // nutzen wir stattdessen hier eine feste Farbe (z.B. Dunkelgrau #444444)
-                console.warn("CORS blockiert Farbextraktion. Nutze Fallback-Farbe.");
+                // FALLBACK: Wenn CORS blockiert (z.B. lokal ohne Server), nutzen wir Dunkelgrau
+                console.warn("Farbextraktion blockiert/fehlgeschlagen. Nutze Fallback-Farbe.");
                 title.style.color = '#444444'; 
                 author.style.color = '#444444';
             }
@@ -92,9 +85,10 @@ function renderKatalog(items) {
             }
         });
 
-        // Sobald die Maus die Karte verlässt -> zurücksetzen
+        // Sobald die Maus die Karte verlässt -> Farbe zurücksetzen
         card.addEventListener('mouseleave', () => {
             title.style.color = '';  
             author.style.color = '';
         });
     });
+}

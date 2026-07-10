@@ -5,11 +5,6 @@
   box-sizing: border-box;
 }
 
-:root {
-  /* Ändere das Testweise von Blau auf Rot! */
-  --hover-color-rgb: 255, 0, 0; 
-}
-
 body {
   font-family: "Univers Next Pro Regular", sans-serif;
   padding: 60px 20px 20px;
@@ -61,33 +56,27 @@ h1 {
   flex: 1;
   text-align: center;
   transform: scale(1.0);
-  /* Übergang für alle Änderungen */
   transition: transform 0.25s ease, font-weight 0.25s ease, color 0.25s ease;
   position: relative;
   backface-visibility: hidden;
 }
 
-/* --- HOVER EFFEKTE (Bereinigt) --- */
+/* --- HOVER EFFEKTE --- */
 
-/* Wenn die Maus über den TITEL oder AUTOR fährt, werden sie fett und größer */
-
-/* Wenn die Maus über den TITEL oder AUTOR fährt, werden sie fett, größer und nehmen die Bildfarbe an */
-.card-title:hover,
-.card-author:hover {
+/* Wenn die Karte gehovert wird, verändern sich Textgrößen */
+.card:hover .card-title,
+.card:hover .card-author {
   font-weight: bold;
   transform: scale(1.04);    
   cursor: pointer;
-  
-  /* Nutzt die extrahierte RGB-Farbe. Falls das JS fehlschlägt, greift der Fallback (z.B. für Zufallsfarben) */
-  color: var(--hover-color, rgb(var(--hover-color-rgb)));
 }
 
-/* Wenn die Maus über das Bild fährt, skaliert es sich */
-.card-image img:hover {
+/* Wenn die Maus über die Karte fährt, skaliert sich das Bild */
+.card:hover .card-image img {
   transform: scale(1.15);
 }
 
-/* Übergang für alle Änderungen (Sorgt dafür, dass auch das JS-Färben weich einblendet) */
+/* Übergang für alle Änderungen (Sorgt dafür, dass das JS-Färben weich einblendet) */
 .card-title,
 .card-author,
 .card-image img {
