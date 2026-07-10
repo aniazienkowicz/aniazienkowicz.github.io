@@ -57,9 +57,8 @@ function renderKatalog(items) {
 
         if (!img) return;
 
-        // Hilfsfunktion, um die Farbe sicher zu setzen
         // Hilfsfunktion, um die Farbe sicher zu setzen und automatisch abzudunkeln, wenn sie zu hell ist
-function applyColor() {
+    function applyColor() {
     try {
         if (img.complete && img.naturalWidth > 0) {
             let [r, g, b] = colorThief.getColor(img);
@@ -91,7 +90,6 @@ function applyColor() {
         author.style.color = '#222222';
     }
 }
-        }
 
         // Sobald die Maus über die KARTE fährt
         card.addEventListener('mouseenter', () => {
