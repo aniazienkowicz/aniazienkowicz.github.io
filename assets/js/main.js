@@ -25,9 +25,12 @@ fetch('/assets/data/katalog.json')
     });
 
 // Steuerung der Filter-Buttons & Infotexte
+// Steuerung der Filter-Buttons & Infotexte
 function setupFilter() {
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const infoTextElem = document.getElementById('filter-infotext');
+    const infoTextProd = document.getElementById('filter-infotext');
+    const infoTextDev = document.getElementById('filter-infotext2');
+    const infoTextTrans = document.getElementById('filter-infotext3');
     
     filterButtons.forEach(button => {
         button.addEventListener('click', (e) => {
@@ -35,15 +38,29 @@ function setupFilter() {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             e.target.classList.add('active');
             
-            // 2. Filter-Wert auslesen (Trimmen verhindert Fehler durch versteckte Leerzeichen)
+            // 2. Filter-Wert auslesen
             const selectedFilter = e.target.getAttribute('data-filter').trim();
             
-            // 3. INFOTEXT STEUERUNG
-            if (infoTextElem) {
+            // 3. ULTRA-SMOOTH INFOTEXT STEUERUNG
+            if (infoTextProd && infoTextDev && infoTextTrans) {
+                // Erstmal alle Texte elegant ausblenden (Zustand weicht nach oben/unten aus)
+                infoTextProd.className = 'info-text-hidden';
+                infoTextDev.className = 'info-text-hidden';
+                infoTextTrans.className = 'info-text-hidden';
+
+                // Mit einer ultrakurzen Verzögerung den gewählten Text reinschweben lassen
                 if (selectedFilter === 'Product Labeling') {
-                    infoTextElem.className = 'info-text-visible'; // Direktes Setzen verhindert Klassen-Konflikte
-                } else {
-                    infoTextElem.className = 'info-text-hidden';
+                    setTimeout(() => {
+                        infoTextProd.className = 'info-text-visible';
+                    }, 200);
+                } else if (selectedFilter === 'Device Labeling') {
+                    setTimeout(() => {
+                        infoTextDev.className = 'info-text-visible';
+                    }, 200);
+                } else if (selectedFilter === 'Transport Labeling') {
+                    setTimeout(() => {
+                        infoTextTrans.className = 'info-text-visible';
+                    }, 200);
                 }
             }
             
