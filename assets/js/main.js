@@ -1,10 +1,9 @@
 let allData = [];
-// Da Color Thief über das HTML geladen wird, greifen wir direkt auf das globale Objekt zu
 const colorThief = new ColorThief(); 
 
 console.log("[System] main.js erfolgreich geladen. Starte JSON-Fetch...");
 
-// 2. JSON-Datei laden (mit absolutem Pfad)
+// JSON-Datei laden
 fetch('/assets/data/katalog.json')
     .then(response => {
         if (!response.ok) throw new Error('JSON-Datei konnte nicht geladen werden (404/500)');
@@ -25,34 +24,44 @@ fetch('/assets/data/katalog.json')
         if (katElem) katElem.innerHTML = '<div class="loading">Fehler beim Laden der Daten</div>';
     });
 
-// NEU: Funktion zur Steuerung der Filter-Buttons
+// Steuerung der Filter-Buttons & Infotexte
 function setupFilter() {
     const filterButtons = document.querySelectorAll('.filter-btn');
+    const infoTextElem = document.getElementById('filter-infotext');
     
     filterButtons.forEach(button => {
         button.addEventListener('click', (e) => {
-            // 1. "active"-Klasse bei allen Buttons entfernen und beim geklickten hinzufügen
+            // 1. "active"-Klasse umschalten
             filterButtons.forEach(btn => btn.classList.remove('active'));
             e.target.classList.add('active');
             
-            // 2. Ausgewählten Filter-Wert auslesen
-            const selectedFilter = e.target.getAttribute('data-filter');
+            // 2. Filter-Wert auslesen (Trimmen verhindert Fehler durch versteckte Leerzeichen)
+            const selectedFilter = e.target.getAttribute('data-filter').trim();
             
-            // 3. Daten filtern
+            // 3. INFOTEXT STEUERUNG
+            if (infoTextElem) {
+                if (selectedFilter === 'Product Labeling') {
+                    infoTextElem.className = 'info-text-visible'; // Direktes Setzen verhindert Klassen-Konflikte
+                } else {
+                    infoTextElem.className = 'info-text-hidden';
+                }
+            }
+            
+            // 4. Daten filtern
             if (selectedFilter === 'all') {
-                renderKatalog(allData); // Zeige alles
+                renderKatalog(allData);
             } else {
                 const filteredData = allData.filter(item => {
-                    // Falls dein JSON-Feld anders heißt (z.B. item.Kategorie), hier anpassen!
-                    return item.Category === selectedFilter || item.Kategorie === selectedFilter;
+                    const itemCategory = item.Category || item.Kategorie;
+                    return itemCategory && itemCategory.trim() === selectedFilter;
                 });
-                renderKatalog(filteredData); // Zeige nur Treffer
+                renderKatalog(filteredData);
             }
         });
     });
 }
 
-// 3. Katalog im HTML rendern (Bleibt gleich, baut aber bei jedem Filter die Karten neu)
+// Katalog im HTML rendern
 function renderKatalog(items) {
     const katalog = document.getElementById('katalog');
     if (!katalog || !Array.isArray(items)) return;
@@ -83,14 +92,19 @@ function renderKatalog(items) {
 
     katalog.innerHTML = html;
 
-    // 4. Karten holen und Hover-Effekte mit Farberkennung hinzufügen (Abschnitt unverändert)
+    // Hover-Effekte nach dem Rendern frisch anbinden
+    attachHoverEffects(katalog);
+}
+
+// Ausgelagerte Hover-Effekte (wichtig, da die Karten bei jedem Filtern neu generiert werden!)
+function attachHoverEffects(katalog) {
     const cards = katalog.querySelectorAll('.card');
     cards.forEach((card) => {
         const img = card.querySelector('.card-image img');
         const title = card.querySelector('.card-title');
         const author = card.querySelector('.card-author');
 
-        if (!img) return;
+        if (!img || !title || !author) return;
 
         function getTargetColor(callback) {
             try {
@@ -126,6 +140,7 @@ function renderKatalog(items) {
             }
         }
 
+        // Event-Listener für Titel
         title.addEventListener('mouseenter', () => {
             if (img.complete) {
                 getTargetColor((color) => { title.style.color = color; });
@@ -138,6 +153,7 @@ function renderKatalog(items) {
         });
         title.addEventListener('mouseleave', () => { title.style.color = ''; });
 
+        // Event-Listener für Autor
         author.addEventListener('mouseenter', () => {
             if (img.complete) {
                 getTargetColor((color) => { author.style.color = color; });
