@@ -1,15 +1,19 @@
+/* --- CSS Reset & Variablen-Vorbereitung --- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+:root {
+  /* Ändere das Testweise von Blau auf Rot! */
+  --hover-color-rgb: 255, 0, 0; 
+}
+
 body {
   font-family: "Univers Next Pro Regular", sans-serif;
-  padding: 60px 20px 20px; /* 60px Abstand ganz oben zum Browserrand */
+  padding: 60px 20px 20px;
   font-size: 16px;
-  
-  /* Zentriert den gesamten Inhaltsbereich horizontal auf der Seite */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,50 +23,87 @@ h1 {
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 60px; /* 60px Abstand NACH UNTEN zum JSON-Inhalt */
+  margin-bottom: 60px;
 }
 
-/* Der Hauptcontainer direkt unter dem H1 */
+/* --- Hauptcontainer --- */
 #katalog.katalog-grid {
   display: flex;
-  flex-direction: column; /* Stapelt die Zeilen untereinander unter der Überschrift */
-  gap: 40px;              /* Abstand zwischen den einzelnen Zeilen */
+  flex-direction: column;
+  gap: 40px;
   width: 100%;
-  max-width: 1200px;      /* Optimale Breite für 3 Spalten nebeneinander */
+  max-width: 1200px;
 }
 
-/* Eine einzelne Zeile (enthält die 3 Spalten) */
+/* Eine einzelne Zeile */
 .card {
   width: 100%;
-  border-bottom: 1px solid #eee; /* Optionale feine Linie zwischen den Einträgen */
-  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  border-radius: 8px;
+  transition: background-color 0.4s ease; 
 }
 
-/* Das 3-Spalten-Layout nebeneinander */
+/* Das 3-Spalten-Layout */
 .card-content {
   display: flex;
-  flex-direction: row;    /* Erzwingt Spalten nebeneinander */
-  align-items: center;    /* Zentriert Titel, Autor und Bild vertikal auf gleicher Höhe */
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
-  gap: 30px;              /* Abstand zwischen den 3 Spalten */
+  gap: 30px;
   width: 100%;
 }
 
-/* Spalte 1: Links (Titel) */
-.card-title {
+/* --- Spalten Basis-Einstellungen --- */
+.card-title,
+.card-author,
+.card-image {
   flex: 1;
-  font-size: 1.2rem;
-  font-weight: regular;
-  color: #333;
-  text-align: center;     /* Zentriert den Text in der linken Spalte */
+  text-align: center;
+  transform: scale(1.0);
+  /* Übergang für alle Änderungen */
+  transition: transform 0.25s ease, font-weight 0.25s ease, color 0.25s ease;
+  position: relative;
+  backface-visibility: hidden;
 }
 
-/* Spalte 2: Mitte (Autor / Inhalt) */
+/* --- HOVER EFFEKTE (Bereinigt) --- */
+
+/* Wenn die Maus über den TITEL oder AUTOR fährt, werden sie fett und größer */
+
+/* Wenn die Maus über den TITEL oder AUTOR fährt, werden sie fett, größer und nehmen die Bildfarbe an */
+.card-title:hover,
+.card-author:hover {
+  font-weight: bold;
+  transform: scale(1.04);    
+  cursor: pointer;
+  
+  /* Nutzt die extrahierte RGB-Farbe. Falls das JS fehlschlägt, greift der Fallback (z.B. für Zufallsfarben) */
+  color: var(--hover-color, rgb(var(--hover-color-rgb)));
+}
+
+/* Wenn die Maus über das Bild fährt, skaliert es sich */
+.card-image img:hover {
+  transform: scale(1.15);
+}
+
+/* Übergang für alle Änderungen (Sorgt dafür, dass auch das JS-Färben weich einblendet) */
+.card-title,
+.card-author,
+.card-image img {
+  transition: transform 0.25s ease, font-weight 0.25s ease, color 0.25s ease;
+}
+
+/* --- Standard-Farben (wenn NICHT gehovert wird) --- */
+.card-title {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #333;
+}
+
 .card-author {
-  flex: 1;
   font-size: 1.2rem;
   color: #333;
-  text-align: center;     /* Zentriert den Text in der mittleren Spalte */
 }
 
 .card-author.unknown {
@@ -70,18 +111,15 @@ h1 {
   color: #999;
 }
 
-/* Spalte 3: Rechts (Bild) */
-/* Spalte 3: Rechts (Bild) - KORRIGIERT */
 .card-image {
-  flex: 1;                 /* Nutzt den gleichen Platz (33%) wie Titel und Autor */
   display: flex;
-  justify-content: center; /* Zentriert das Bild innerhalb der rechten Spalte */
+  justify-content: center;
 }
 
 img {
-  max-width: 100%;         /* Bild passt sich der Spaltenbreite an */
-  max-height: 180px;       /* Begrenzt die Höhe, damit extrem hohe Bilder das Layout nicht zerreißen */
-  height: auto;            /* Behält das Seitenverhältnis bei */
-  object-fit: contain;     /* Sorgt dafür, dass das Bild innerhalb des Rahmens gut aussieht */
+  max-width: 100%;
+  max-height: 180px;
+  height: auto;
+  object-fit: contain;
   display: block;
 }

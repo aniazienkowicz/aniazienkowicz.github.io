@@ -2,6 +2,7 @@
  {
     "Author": "Postage BE",
     "Titel": "F5. Pitney Bowes-GB “5000” (MV).",
+    "Thema": "Postage",
     "@image": "assets/img/Belgium_stamp_type_F5.jpg",
     "Dateiname": "Belgium_stamp_type_F5.jpg",
     "path extension": "assets/img/"
@@ -9,6 +10,7 @@
   {
     "Author": "Postage BR",
     "Titel": "PV2. “Perm” (FV), 1989.",
+    "Thema": "Postage",
     "@image": "assets/img/Bulgaria_PV2.jpg",
     "Dateiname": "Bulgaria_PV2.jpg",
     "path extension": "assets/img/"
@@ -16,6 +18,7 @@
   {
     "Author": "Postage DK",
     "Titel": "C10.1. Postalia “MS-5” (MV).",
+    "Thema": "Postage",
     "@image": "assets/img/Denmark_Type_C10_1.jpg",
     "Dateiname": "Denmark_Type_C10_1.jpg",
     "path extension": "assets/img/"
@@ -23,6 +26,7 @@
   {
     "Author": "Postage DE",
     "Titel": "PA11.1. Hasler “F66” (MV).",
+    "Thema": "Postage",
     "@image": "assets/img/Germany_stamp_type_PA11point1.jpg",
     "Dateiname": "Germany_stamp_type_PA11point1.jpg",
     "path extension": "assets/img/"
@@ -30,6 +34,7 @@
   {
     "Author": "Postage EE",
     "Titel": "CD9. Hasler “Smile” (MV).",
+    "Thema": "Postage",
     "@image": "assets/img/Estonia_CD9.jpg",
     "Dateiname": "Estonia_CD9.jpg",
     "path extension": "assets/img/"
@@ -37,6 +42,7 @@
   {
     "Author": "Postage FI",
     "Titel": "B11. Frama (MV).",
+    "Thema": "Postage",
     "@image": "assets/img/Finland_B11.jpg",
     "Dateiname": "Finland_B11.jpg",
     "path extension": "assets/img/"
@@ -44,6 +50,7 @@
   {
     "Author": "Postage FR",
     "Titel": "AB11. Pitney Bowes-GB “6500” (MV), 1987.",
+    "Thema": "Postage",
     "@image": "assets/img/France_AB11.jpg",
     "Dateiname": "France_AB11.jpg",
     "path extension": "assets/img/"
@@ -51,6 +58,7 @@
   {
     "Author": "Postage GR",
     "Titel": "D4. Pitney Bowes-GB “Automax” (MV).",
+    "Thema": "Postage",
     "@image": "assets/img/Greece_stamp_type_D4.jpg",
     "Dateiname": "Greece_stamp_type_D4.jpg",
     "path extension": "assets/img/"
@@ -58,6 +66,7 @@
   {
     "Author": "Postage IE",
     "Titel": "BC6. Neopost “Electronic” (MV).",
+    "Thema": "Postage",
     "@image": "assets/img/Ireland_stamp_type_BC6.jpg",
     "Dateiname": "Ireland_stamp_type_BC6.jpg",
     "path extension": "assets/img/"
@@ -65,6 +74,7 @@
   {
     "Author": "Postage IT",
     "Titel": "D10. Francotyp “A9000” (MV).",
+    "Thema": "Postage",
     "@image": "assets/img/Italy_stamp_type_D10B.jpg",
     "Dateiname": "Italy_stamp_type_D10B.jpg",
     "path extension": "assets/img/"
@@ -72,6 +82,7 @@
   {
     "Author": "Postage HR",
     "Titel": "B9.3. Pitney Bowe-GB “6600” series (MV).",
+    "Thema": "Postage",
     "@image": "assets/img/Croatia_stamp_type_B9p2.jpg",
     "Dateiname": "Croatia_stamp_type_B9p2.jpg",
     "path extension": "assets/img/"
@@ -79,6 +90,7 @@
   {
     "Author": "Postage LV",
     "Titel": "D4. Pitney Bowes-GB “Automax” (MV).",
+    "Thema": "Postage",
     "@image": "assets/img/Greece_stamp_type_D4.jpg",
     "Dateiname": "Greece_stamp_type_D4.jpg",
     "path extension": "assets/img/"
@@ -86,6 +98,7 @@
   {
     "Author": "Postage GR",
     "Titel": "EF1. Hasler “Mailmaster” (MV).",
+    "Thema": "Postage",
     "@image": "assets/img/Latvia_Type_EF1Bb.jpg",
     "Dateiname": "Latvia_Type_EF1Bb.jpg",
     "path extension": "assets/img/"
@@ -93,6 +106,7 @@
   {
     "Author": "Postage LT",
     "Titel": "CE2. Pitney Bowes-GB “A900” series (MV).",
+    "Thema": "Postage",
     "@image": "assets/img/Lithuania_stamp_type_CE2.jpg",
     "Dateiname": "Lithuania_stamp_type_CE2.jpg",
     "path extension": "assets/img/"
@@ -100,6 +114,7 @@
   {
     "Author": "Postage LU",
     "Titel": "E1. Pitney Bowes-GB “5000” series (MV).",
+    "Thema": "Postage",
     "@image": "assets/img/Luxembourg_stamp_type_E1B.jpg",
     "Dateiname": "Luxembourg_stamp_type_E1B.jpg",
     "path extension": "assets/img/"
@@ -107,6 +122,7 @@
   {
     "Author": "Autoscheiben",
     "Titel": "Transportetiketten",
+    "Thema": "Automotive Glass",
     "@image": "assets/img/e_platzhalter.jpg",
     "Dateiname": "e_platzhalter.jpg",
     "path extension": "assets/img/"
@@ -114,6 +130,7 @@
   {
     "Author": "AGC Automotive",
     "Titel": "43R-002092",
+    "Thema": "Automotive Glass",
     "@image": "assets/img/auto_6.jpg",
     "Dateiname": "auto_6.jpg",
     "path extension": "assets/img/"
@@ -121,6 +138,7 @@
   {
     "Author": "TRC Duracam",
     "Titel": "43R-00097",
+    "Thema": "Automotive Glass",
     "@image": "assets/img/auto_5.jpg",
     "Dateiname": "auto_5.jpg",
     "path extension": "assets/img/"
@@ -128,6 +146,7 @@
   {
     "Author": "AGC Automotive",
     "Titel": "43R-000098",
+    "Thema": "Automotive Glass",
     "@image": "assets/img/auto_4.jpeg",
     "Dateiname": "auto_4.jpeg",
     "path extension": "assets/img/"
@@ -135,6 +154,7 @@
   {
     "Author": "Saint-Gobain Sekurit",
     "Titel": "43R-001216",
+    "Thema": "Automotive Glass",
     "@image": "assets/img/auto_1.jpg",
     "Dateiname": "auto_1.jpg",
     "path extension": "assets/img/"
@@ -142,6 +162,7 @@
   {
     "Author": "AGC Automotive",
     "Titel": "43R-003635",
+    "Thema": "Automotive Glass",
     "@image": "assets/img/auto_2.jpg",
     "Dateiname": "auto_2.jpg",
     "path extension": "assets/img/"
@@ -149,6 +170,7 @@
   {
     "Author": "Vitro",
     "Titel": "43R-000499",
+    "Thema": "Automotive Glass",
     "@image": "assets/img/auto_8.jpeg",
     "Dateiname": "auto_8.jpeg",
     "path extension": "assets/img/"
@@ -156,6 +178,7 @@
   {
     "Author": "Saint-Gobain Sekurit",
     "Titel": "43R-004553",
+    "Thema": "Automotive Glass",
     "@image": "assets/img/auto_9.jpeg",
     "Dateiname": "auto_9.jpeg",
     "path extension": "assets/img/"
@@ -163,6 +186,7 @@
   {
     "Author": "Saint-Gobain Sekurit",
     "Titel": "43R-000677",
+    "Thema": "Automotive Glass",
     "@image": "assets/img/auto_10.jpeg",
     "Dateiname": "auto_10.jpeg",
     "path extension": "assets/img/"
@@ -170,6 +194,7 @@
   {
     "Author": "Saint-Gobain Sekurit",
     "Titel": "43R-000016",
+    "Thema": "Automotive Glass",
     "@image": "assets/img/auto_11.jpg",
     "Dateiname": "auto_11.jpg",
     "path extension": "assets/img/"
