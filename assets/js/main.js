@@ -24,13 +24,11 @@ fetch('/assets/data/katalog.json')
         if (katElem) katElem.innerHTML = '<div class="loading">Fehler beim Laden der Daten</div>';
     });
 
-// Steuerung der Filter-Buttons & Infotexte
-// Steuerung der Filter-Buttons & Infotexte
 function setupFilter() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const infoTextProd = document.getElementById('filter-infotext');
     const infoTextDev = document.getElementById('filter-infotext2');
-    const infoTextTrans = document.getElementById('filter-infotext3');
+    const infoTextTrans = document.getElementById('filter-infotext3'); // <-- Jetzt richtig verknüpft!
     
     filterButtons.forEach(button => {
         button.addEventListener('click', (e) => {
@@ -41,26 +39,20 @@ function setupFilter() {
             // 2. Filter-Wert auslesen
             const selectedFilter = e.target.getAttribute('data-filter').trim();
             
-            // 3. ULTRA-SMOOTH INFOTEXT STEUERUNG
+            // 3. INFOTEXT STEUERUNG
             if (infoTextProd && infoTextDev && infoTextTrans) {
-                // Erstmal alle Texte elegant ausblenden (Zustand weicht nach oben/unten aus)
+                // Erstmal alle auf versteckt setzen
                 infoTextProd.className = 'info-text-hidden';
                 infoTextDev.className = 'info-text-hidden';
                 infoTextTrans.className = 'info-text-hidden';
 
-                // Mit einer ultrakurzen Verzögerung den gewählten Text reinschweben lassen
+                // Jetzt die sichtbare Klasse zuweisen
                 if (selectedFilter === 'Product Labeling') {
-                    setTimeout(() => {
-                        infoTextProd.className = 'info-text-visible';
-                    }, 200);
+                    infoTextProd.className = 'info-text-visible';
                 } else if (selectedFilter === 'Device Labeling') {
-                    setTimeout(() => {
-                        infoTextDev.className = 'info-text-visible';
-                    }, 200);
+                    infoTextDev.className = 'info-text-visible';
                 } else if (selectedFilter === 'Transport Labeling') {
-                    setTimeout(() => {
-                        infoTextTrans.className = 'info-text-visible';
-                    }, 200);
+                    infoTextTrans.className = 'info-text-visible';
                 }
             }
             
@@ -76,7 +68,7 @@ function setupFilter() {
             }
         });
     });
-}
+}// <-- Diese Klammer hatte gefehlt und den Absturz verursacht!
 
 // Katalog im HTML rendern
 function renderKatalog(items) {

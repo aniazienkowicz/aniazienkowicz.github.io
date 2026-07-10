@@ -180,7 +180,7 @@ img {
   cursor: pointer;
 }
 /* ==========================================================================
-   7. INFOTEXT STYLING (DYNAMISCH)
+   7. INFOTEXT STYLING (MINIMALISTISCH & TYPOGRAFISCH)
    ========================================================================== */
 #filter-infotext,
 #filter-infotext2,
@@ -190,31 +190,69 @@ img {
   text-align: left;
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #666;
+  color: #9d9d9d;
   
-  /* Verhindert jegliches Flackern während der Animation */
+  /* Typografie im Stil von aniazienkowicz.github.io */
+  font-size: 1.0rem; /* Deutlich größer und präsenter */
+  font-weight: 300;  /* Schön elegant und dünn */
+  line-height: 1.5;  /* Luftiger Zeilenabstand */
+  color: #111;       /* Fast sattes Schwarz für starken Kontrast */
+  letter-spacing: -0.02em; /* Leicht engerer Buchstabenabstand für Editorial-Look */
+  
+  /* Hardware-Beschleunigung für absolut flüssige Animation */
   backface-visibility: hidden; 
+  
+  /* Startzustand: Unsichtbar */
+  opacity: 0;
+  max-height: 0;
+  margin-bottom: 0;
+  transform: translateY(15px); /* Sanfter Pop-Up-Effekt von unten */
+  overflow: hidden;
+  
+  /* Übergang für das edle, träge Einblenden */
+  transition: 
+    opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+    max-height 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+    margin-bottom 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Zustand: Unsichtbar */
-.info-text-hidden {
-  display: none;
+/* Zustand: Unsichtbar (ID-Spezifität sichert das Überschreiben) */
+#filter-infotext.info-text-hidden,
+#filter-infotext2.info-text-hidden,
+#filter-infotext3.info-text-hidden {
+  opacity: 0;
+  max-height: 0 !important;
+  margin-bottom: 0 !important;
+  transform: translateY(15px);
 }
 
-/* Zustand: Sichtbar (Jetzt deutlich smoother durch 'ease-out' und 0.5s) */
-.info-text-visible {
-  display: block;
-  animation: smoothFadeIn 0.75s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+/* Zustand: Sichtbar (Klappt elegant auf und fadet ein) */
+#filter-infotext.info-text-visible,
+#filter-infotext2.info-text-visible,
+#filter-infotext3.info-text-visible {
+  opacity: 1;
+  max-height: 400px; /* Genug Platz für die große Schrift */
+  margin-bottom: 80px; /* Viel Whitespace vor dem Katalog-Grid */
+  transform: translateY(0);
 }
 
-/* Die geschmeidige Einblend- und Gleitanimation */
-@keyframes smoothFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px); /* Startet minimal tiefer */
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);    /* Gleitet an die perfekte Position */
-  }
+/* Zustand: Unsichtbar (ID-Spezifität sichert das Überschreiben) */
+#filter-infotext.info-text-hidden,
+#filter-infotext2.info-text-hidden,
+#filter-infotext3.info-text-hidden {
+  opacity: 0;
+  max-height: 0 !important;
+  margin-bottom: 0 !important;
+  transform: translateY(15px);
+}
+
+/* Zustand: Sichtbar (Klappt elegant auf und fadet ein) */
+#filter-infotext.info-text-visible,
+#filter-infotext2.info-text-visible,
+#filter-infotext3.info-text-visible {
+  opacity: 1;
+  max-height: 400px; /* Genug Platz für die große Schrift */
+  margin-bottom: 80px; /* Viel Whitespace vor dem Katalog-Grid */
+  transform: translateY(0);
 }
