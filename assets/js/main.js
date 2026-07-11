@@ -70,7 +70,7 @@ function setupFilter() {
     });
 }// <-- Diese Klammer hatte gefehlt und den Absturz verursacht!
 
-// Katalog im HTML rendern
+// Katalog im HTML rendern (mit getauschten Spalten 2 & 3)
 function renderKatalog(items) {
     const katalog = document.getElementById('katalog');
     if (!katalog || !Array.isArray(items)) return;
@@ -82,14 +82,29 @@ function renderKatalog(items) {
         return;
     }
 
+    let letztesThema = ''; // Definiert außerhalb der Schleife
+
     items.forEach((item, i) => {
         let authorText = item.Author === '-' ? 'Autor unbekannt' : item.Author;
         let authorClass = item.Author === '-' ? 'unknown' : '';
+        let infoText = item.Zusatztext ? item.Zusatztext : '-';
+        const aktuellesThema = item.Thema || '';
 
+        if (aktuellesThema !== letztesThema) {
+            html += `
+                <div class="thema-group-header">
+                    <h2>${aktuellesThema}</h2>
+                </div>
+            `;
+            letztesThema = aktuellesThema; // KORRIGIERT: Kein doppeltes "let" mehr!
+        }
+
+        // HIER GETAUSCHT: card-author steht jetzt VOR card-info
         html += `
             <div class="card" id="card-${i}">
                 <div class="card-content">
                     <div class="card-title">${item.Titel}</div>
+                    <div class="card-info">${infoText}</div>
                     <div class="card-author ${authorClass}">${authorText}</div>
                     <div class="card-image">
                         <img src="${item['@image']}" alt="${item.Titel}" crossorigin="anonymous">
@@ -100,20 +115,19 @@ function renderKatalog(items) {
     });
 
     katalog.innerHTML = html;
-
-    // Hover-Effekte nach dem Rendern frisch anbinden
     attachHoverEffects(katalog);
 }
 
-// Ausgelagerte Hover-Effekte (wichtig, da die Karten bei jedem Filtern neu generiert werden!)
+// Ausgelagerte Hover-Effekte (Jetzt inklusive card-info!)
 function attachHoverEffects(katalog) {
     const cards = katalog.querySelectorAll('.card');
     cards.forEach((card) => {
         const img = card.querySelector('.card-image img');
         const title = card.querySelector('.card-title');
         const author = card.querySelector('.card-author');
+        const info = card.querySelector('.card-info'); // <-- HIER ERGÄNZT
 
-        if (!img || !title || !author) return;
+        if (!img || !title || !author || !info) return;
 
         function getTargetColor(callback) {
             try {
@@ -149,30 +163,24 @@ function attachHoverEffects(katalog) {
             }
         }
 
-        // Event-Listener für Titel
-        title.addEventListener('mouseenter', () => {
-            if (img.complete) {
-                getTargetColor((color) => { title.style.color = color; });
-            } else {
-                img.addEventListener('load', function onImgLoad() {
-                    getTargetColor((color) => { title.style.color = color; });
-                    img.removeEventListener('load', onImgLoad);
-                });
-            }
-        });
-        title.addEventListener('mouseleave', () => { title.style.color = ''; });
+        // Hilfsfunktion, um Event-Listener ohne redundanten Code an ein Element zu binden
+        function bindColorHover(element) {
+            element.addEventListener('mouseenter', () => {
+                if (img.complete) {
+                    getTargetColor((color) => { element.style.color = color; });
+                } else {
+                    img.addEventListener('load', function onImgLoad() {
+                        getTargetColor((color) => { element.style.color = color; });
+                        img.removeEventListener('load', onImgLoad);
+                    });
+                }
+            });
+            element.addEventListener('mouseleave', () => { element.style.color = ''; });
+        }
 
-        // Event-Listener für Autor
-        author.addEventListener('mouseenter', () => {
-            if (img.complete) {
-                getTargetColor((color) => { author.style.color = color; });
-            } else {
-                img.addEventListener('load', function onImgLoad() {
-                    getTargetColor((color) => { author.style.color = color; });
-                    img.removeEventListener('load', onImgLoad);
-                });
-            }
-        });
-        author.addEventListener('mouseleave', () => { author.style.color = ''; });
+        // Hover anwenden auf alle drei Text-Spalten
+        bindColorHover(title);
+        bindColorHover(author);
+        bindColorHover(info); // <-- Dadurch färbt sich jetzt auch der Zusatztext!
     });
 }

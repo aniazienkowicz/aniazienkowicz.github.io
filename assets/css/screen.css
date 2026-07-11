@@ -56,7 +56,7 @@ h1 {
 }
 
 /* ==========================================================================
-   3. HAUPTCONTAINER & GRID-LAYOUT (3 SPALTEN)
+   3. HAUPTCONTAINER & GRID-LAYOUT (Jetzt 4 SPALTEN)
    ========================================================================== */
 #katalog.katalog-grid {
   display: flex;
@@ -66,23 +66,20 @@ h1 {
   max-width: 1200px;
 }
 
-/* Eine einzelne Zeile im Katalog */
 .card {
   width: 100%;
   border-bottom: 1px solid #eee;
-  padding: 10px; /* Hier verringert für flachere Zeilen */
+  padding: 10px; 
   border-radius: 8px;
   transition: background-color 0.4s ease; 
 }
 
 /* 
-   Das 3-Spalten-Layout als Grid. 
-   1fr 1fr 1fr teilt die Karte in drei exakt gleich große Zonen auf (jeweils 33.33%).
-   align-items: center sorgt für die mathematisch exakte vertikale Zentrierung.
+   Aufteilung in 4 exakt gleich große Zonen (jeweils 25%).
 */
 .card-content {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   align-items: center; 
   gap: 30px;
   width: 100%;
@@ -93,10 +90,11 @@ h1 {
    ========================================================================== */
 .card-title,
 .card-author,
+.card-info,
 .card-image {
   width: 100%;
   display: flex;
-  align-items: center; /* Vertikale Zentrierung des Inhalts innerhalb der Spaltenbox */
+  align-items: center; /* Vertikale Zentrierung */
   
   transform: scale(1.0);
   transition: transform 0.25s ease, font-weight 0.25s ease, color 0.25s ease;
@@ -104,7 +102,7 @@ h1 {
   backface-visibility: hidden;
 }
 
-/* 1. Spalte: Titel zentriert in seiner linken Zone */
+/* 1. Spalte: Titel */
 .card-title {
   justify-content: center; 
   text-align: center;
@@ -113,7 +111,7 @@ h1 {
   color: #333;
 }
 
-/* 2. Spalte: Autor zentriert in der mittleren Zone */
+/* 2. Spalte: Autor */
 .card-author {
   justify-content: center; 
   text-align: center;
@@ -126,7 +124,15 @@ h1 {
   color: #999;
 }
 
-/* 3. Spalte: Bild-Container drückt das Bild ganz nach rechts außen */
+/* 3. Spalte: NEUE Textbox links vom Bild */
+.card-info {
+  justify-content: center;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* 4. Spalte: Bild-Container ganz rechts außen */
 .card-image {
   justify-content: flex-end; 
 }
@@ -156,6 +162,7 @@ img {
 /* Sorgt dafür, dass das JS-Färben und die Transformationen weich einblenden */
 .card-title,
 .card-author,
+.card-info,
 .card-image img {
   transition: transform 0.25s ease, font-weight 0.25s ease, color 0.25s ease;
 }
@@ -174,85 +181,94 @@ img {
   cursor: pointer;
 }
 
+.card-info:hover {
+  font-weight: bold;
+  transform: scale(1.15);    
+  cursor: pointer;
+}
+
 /* Nur das Bild reagiert, wenn man direkt über das Bild fährt */
 .card-image img:hover {
   transform: scale(1.15);
   cursor: pointer;
 }
 /* ==========================================================================
-   7. INFOTEXT STYLING (MINIMALISTISCH & TYPOGRAFISCH)
+   7. INFOTEXT STYLING (PERFORMANCE-OPTIMIERT & SMOOTH)
    ========================================================================== */
 #filter-infotext,
 #filter-infotext2,
 #filter-infotext3 {
   max-width: 800px;
-  margin: 0 auto 30px auto;
+  margin: 0 auto;
   text-align: left;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #9d9d9d;
   
-  /* Typografie im Stil von aniazienkowicz.github.io */
-  font-size: 1.0rem; /* Deutlich größer und präsenter */
-  font-weight: 300;  /* Schön elegant und dünn */
-  line-height: 1.5;  /* Luftiger Zeilenabstand */
-  color: #111;       /* Fast sattes Schwarz für starken Kontrast */
-  letter-spacing: -0.02em; /* Leicht engerer Buchstabenabstand für Editorial-Look */
+  /* Typografie */
+  font-size: 1.0rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #111;
+  letter-spacing: -0.02em;
   
-  /* Hardware-Beschleunigung für absolut flüssige Animation */
+  /* Rendere den Text auf einer eigenen GPU-Ebene */
+  will-change: transform, opacity;
   backface-visibility: hidden; 
-  
-  /* Startzustand: Unsichtbar */
+  -webkit-font-smoothing: antialiased;
+
+  /* Startzustand: Unsichtbar und leicht nach unten versetzt */
   opacity: 0;
-  max-height: 0;
-  margin-bottom: 0;
-  transform: translateY(15px); /* Sanfter Pop-Up-Effekt von unten */
-  overflow: hidden;
+  transform: translateY(20px);
   
-  /* Übergang für das edle, träge Einblenden */
+  /* Übergang: Nur noch GPU-beschleunigte Werte animieren (Keine Höhen-Animation!) */
   transition: 
-    opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1),
-    transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
-    max-height 0.5s cubic-bezier(0.25, 1, 0.5, 1),
-    margin-bottom 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    opacity 0.6s cubic-bezier(0.215, 0.610, 0.355, 1.000),
+    transform 0.6s cubic-bezier(0.215, 0.610, 0.355, 1.000),
+    display 0.6s ease allow-discrete; /* Sorgt dafür, dass ausgeblendeter Text keinen Platz wegnimmt */
+    
+  /* Wichtig: Wenn ausgeblendet, komplett aus dem Layout nehmen */
+  display: none;
 }
 
-/* Zustand: Unsichtbar (ID-Spezifität sichert das Überschreiben) */
-#filter-infotext.info-text-hidden,
-#filter-infotext2.info-text-hidden,
-#filter-infotext3.info-text-hidden {
-  opacity: 0;
-  max-height: 0 !important;
-  margin-bottom: 0 !important;
-  transform: translateY(15px);
-}
-
-/* Zustand: Sichtbar (Klappt elegant auf und fadet ein) */
+/* Zustand: Sichtbar (Schaltet das Display an und fadet via GPU ein) */
 #filter-infotext.info-text-visible,
 #filter-infotext2.info-text-visible,
 #filter-infotext3.info-text-visible {
+  display: block;
   opacity: 1;
-  max-height: 400px; /* Genug Platz für die große Schrift */
-  margin-bottom: 80px; /* Viel Whitespace vor dem Katalog-Grid */
   transform: translateY(0);
+  margin-bottom: 80px; /* Der Abstand ist sofort da, nur der Text fadet smooth */
 }
 
-/* Zustand: Unsichtbar (ID-Spezifität sichert das Überschreiben) */
+/* Zustand: Explizit ausgeblendet */
 #filter-infotext.info-text-hidden,
 #filter-infotext2.info-text-hidden,
 #filter-infotext3.info-text-hidden {
+  display: none;
   opacity: 0;
-  max-height: 0 !important;
-  margin-bottom: 0 !important;
-  transform: translateY(15px);
+  transform: translateY(20px);
+  margin-bottom: 0;
+}
+/* ==========================================================================
+   8. THEMA GRUPPEN-ÜBERSCHRIFTEN (Eingebetteter Look)
+   ========================================================================== */
+.thema-group-header {
+  width: 100%;
+  padding: 12px 20px;
+  margin-top: 50px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5; /* Subtiler, hellgrauer Hintergrund */
+  border-radius: 8px;        /* Gleicher Radius wie bei den Karten */
 }
 
-/* Zustand: Sichtbar (Klappt elegant auf und fadet ein) */
-#filter-infotext.info-text-visible,
-#filter-infotext2.info-text-visible,
-#filter-infotext3.info-text-visible {
-  opacity: 1;
-  max-height: 400px; /* Genug Platz für die große Schrift */
-  margin-bottom: 80px; /* Viel Whitespace vor dem Katalog-Grid */
-  transform: translateY(0);
+.thema-group-header h2 {
+  font-family: "Univers Next Pro Regular", sans-serif;
+  font-size: 1.1rem;         /* Etwas kompakter, wirkt edler */
+  font-weight: bold;
+  color: #555;               /* Dunkelgrau statt hartem Schwarz */
+  text-transform: none;      /* Normale Groß-/Kleinschreibung */
+  letter-spacing: 0.02em;
+}
+
+/* Verhindert zu viel Abstand beim allerersten Element */
+#katalog > .thema-group-header:first-child {
+  margin-top: 0;
 }
