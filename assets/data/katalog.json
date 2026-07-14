@@ -214,7 +214,7 @@
     "Titel": "BB3. Frama “M/E bzw 100” (MV).",
     "Thema": "Postage",
     "Category": "Transport Labeling",
-    "Zusatztext": "TM: DC large (28 mm)",
+    "Zusatztext": "TM: DC",
     "@image": "assets/img/Slovakia_stamp_type_BB3.jpg",
     "Dateiname": "Slovakia_stamp_type_BB3.jpg",
     "path extension": "assets/img/"
@@ -395,8 +395,8 @@
     "Thema": "Pharma Packaging",
     "Category": "Product Labeling",
     "Zusatztext": "C₂₀H₂₃NHCl",
-    "@image": "assets/img/ludiomil.webp",
-    "Dateiname": "ludiomil.webp",
+    "@image": "assets/img/pharma_verpackung-01.png",
+    "Dateiname": "pharma_verpackung-01.png",
     "path extension": "assets/img/"
   },
   {
@@ -405,8 +405,278 @@
     "Thema": "Pharma Packaging",
     "Category": "Product Labeling",
     "Zusatztext": "C₁₆H₁₂FN₃O₃",
-    "@image": "assets/img/blister_gruen.png",
-    "Dateiname": "blister_gruen.png",
+    "@image": "assets/img/pharma_verpackung-02.png",
+    "Dateiname": "pharma_verpackung-02.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Hypnotic",
+    "Titel": "Triazolam®",
+    "Thema": "Pharma Packaging",
+    "Category": "Product Labeling",
+    "Zusatztext": "C₁₇H₁₂Cl₂N₄H",
+    "@image": "assets/img/pharma_verpackung-03.png",
+    "Dateiname": "pharma_verpackung-03.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Anxiolytic",
+    "Titel": "Depas®",
+    "Thema": "Pharma Packaging",
+    "Category": "Product Labeling",
+    "Zusatztext": "C₁₇H₁₅ClN₄S",
+    "@image": "assets/img/pharma_verpackung-04.png",
+    "Dateiname": "pharma_verpackung-04.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Gastroprokinetic",
+    "Titel": "Acofide®",
+    "Thema": "Pharma Packaging",
+    "Category": "Product Labeling",
+    "Zusatztext": "C₂₁H₃₀N₄O₅S",
+    "@image": "assets/img/pharma_verpackung-05.png",
+    "Dateiname": "pharma_verpackung-05.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Proton Pump Inhibitor",
+    "Titel": "Omeprazole®",
+    "Thema": "Pharma Packaging",
+    "Category": "Product Labeling",
+    "Zusatztext": "C₁₇H₁₉N₃O₃S",
+    "@image": "assets/img/pharma_verpackung-07.png",
+    "Dateiname": "pharma_verpackung-07.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Antidepressant",
+    "Titel": "Ludiomil®",
+    "Thema": "Pharma Packaging",
+    "Category": "Product Labeling",
+    "Zusatztext": "C₂₀H₂₃NHCl",
+    "@image": "assets/img/pharma_verpackung-08.png",
+    "Dateiname": "pharma_verpackung-08.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Anxiolytic",
+    "Titel": "Depas®",
+    "Thema": "Pharma Packaging",
+    "Category": "Product Labeling",
+    "Zusatztext": "C17H15CLN4S",
+    "@image": "assets/img/pharma_verpackung-09.png",
+    "Dateiname": "pharma_verpackung-09.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "Anxiolytic",
+    "Titel": "Depas®",
+    "Thema": "Pharma Packaging",
+    "Category": "Product Labeling",
+    "Zusatztext": "C17H15CLN4S",
+    "@image": "assets/img/pharma_verpackung-10.png",
+    "Dateiname": "pharma_verpackung-10.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "EN 374, EN 388, EN 421",
+    "Titel": "KCL GmbH",
+    "Thema": "Gloves",
+    "Category": "Product Labeling",
+    "Zusatztext": "Camapren (Art. 720)®",
+    "@image": "assets/img/handschuhe-11.png",
+    "Dateiname": "handschuhe-11.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "EN 374, EN 388, EN 421",
+    "Titel": "KCL GmbH",
+    "Thema": "Gloves",
+    "Category": "Product Labeling",
+    "Zusatztext": "Cama Clean (Art. 708)",
+    "@image": "assets/img/handschuhe-12.png",
+    "Dateiname": "handschuhe-12.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "EN 388, EN 407, EN 12477",
+    "Titel": "TECWERK",
+    "Thema": "Gloves",
+    "Category": "Product Labeling",
+    "Zusatztext": "MEXICO-Z (Art. 2000 371 212)",
+    "@image": "assets/img/handschuhe-13.png",
+    "Dateiname": "handschuhe-13.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "EN 388",
+    "Titel": "L+D",
+    "Thema": "Gloves",
+    "Category": "Product Labeling",
+    "Zusatztext": "Typ 1481 PVC-35",
+    "@image": "assets/img/handschuhe-14.png",
+    "Dateiname": "handschuhe-14.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "EN 388, EN 374",
+    "Titel": "uvex",
+    "Thema": "Gloves",
+    "Category": "Product Labeling",
+    "Zusatztext": "PROFABUTYL B05R",
+    "@image": "assets/img/handschuhe-15.png",
+    "Dateiname": "handschuhe-15.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "IEC 60903, EN 60903",
+    "Titel": "Supersafe",
+    "Thema": "Gloves",
+    "Category": "Product Labeling",
+    "Zusatztext": "SUP-00 0",
+    "@image": "assets/img/handschuhe-16.png",
+    "Dateiname": "handschuhe-16.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "EN 388, EN 407, EN 12477",
+    "Titel": "EXCELLENT",
+    "Thema": "Gloves",
+    "Category": "Product Labeling",
+    "Zusatztext": "WELDER NS (H103NS)",
+    "@image": "assets/img/handschuhe-17.png",
+    "Dateiname": "handschuhe-17.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "EN 388, EN 407, EN 12477",
+    "Titel": "TECWERK",
+    "Thema": "Gloves",
+    "Category": "Product Labeling",
+    "Zusatztext": "MÜHLHEIM II SUPER (Art. 2000 371 215)",
+    "@image": "assets/img/handschuhe-18.png",
+    "Dateiname": "handschuhe-18.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "EN 388, EN 407, EN 12477",
+    "Titel": "Strong Hands®",
+    "Thema": "Gloves",
+    "Category": "Product Labeling",
+    "Zusatztext": "Welder-Profi 2 (Art. 0257)",
+    "@image": "assets/img/handschuhe-19.png",
+    "Dateiname": "handschuhe-19.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "EN 388, EN 407, EN 12477",
+    "Titel": "Weldas",
+    "Thema": "Gloves",
+    "Category": "Product Labeling",
+    "Zusatztext": "Ultimate Comfort (10-2101)",
+    "@image": "assets/img/handschuhe-20.png",
+    "Dateiname": "handschuhe-20.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "EN 388",
+    "Titel": "ASATEX",
+    "Thema": "Gloves",
+    "Category": "Product Labeling",
+    "Zusatztext": "(Art. 3620)",
+    "@image": "assets/img/handschuhe-21.png",
+    "Dateiname": "handschuhe-21.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "EN 388",
+    "Titel": "TECWERK",
+    "Thema": "Gloves",
+    "Category": "Product Labeling",
+    "Zusatztext": "(Art. 2000 371 272)",
+    "@image": "assets/img/handschuhe-22.png",
+    "Dateiname": "handschuhe-22.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "EN 388",
+    "Titel": "SAFETEK",
+    "Thema": "Gloves",
+    "Category": "Product Labeling",
+    "Zusatztext": "Viper 5",
+    "@image": "assets/img/handschuhe-23.png",
+    "Dateiname": "handschuhe-23.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "EN 388",
+    "Titel": "Uvex",
+    "Thema": "Gloves",
+    "Category": "Product Labeling",
+    "Zusatztext": "UNIPUR 6639",
+    "@image": "assets/img/handschuhe-24.png",
+    "Dateiname": "handschuhe-24.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "EN 388, EN 407, EN 12477",
+    "Titel": "PROMAT",
+    "Thema": "Gloves",
+    "Category": "Product Labeling",
+    "Zusatztext": "MEXICO-Z Super (Art. 4000371213)",
+    "@image": "assets/img/handschuhe-25.png",
+    "Dateiname": "handschuhe-25.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "EN 388",
+    "Titel": "ASATEX®",
+    "Thema": "Gloves",
+    "Category": "Product Labeling",
+    "Zusatztext": "(Art. 03400P)",
+    "@image": "assets/img/handschuhe-26.png",
+    "Dateiname": "handschuhe-26.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "EN 388",
+    "Titel": "JBM®",
+    "Thema": "Gloves",
+    "Category": "Product Labeling",
+    "Zusatztext": "(REF 52739)",
+    "@image": "assets/img/handschuhe-27.png",
+    "Dateiname": "handschuhe-27.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "EN 388",
+    "Titel": "Hase Safety Gloves",
+    "Thema": "Gloves",
+    "Category": "Product Labeling",
+    "Zusatztext": "SCHWERIN-V",
+    "@image": "assets/img/handschuhe-28.png",
+    "Dateiname": "handschuhe-28.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "EN 388, EN 407, EN 12477",
+    "Titel": "SAFETYTEX®",
+    "Thema": "Gloves",
+    "Category": "Product Labeling",
+    "Zusatztext": "Kreien",
+    "@image": "assets/img/handschuhe-29.png",
+    "Dateiname": "handschuhe-29.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "EN 388",
+    "Titel": "Plast",
+    "Thema": "Gloves",
+    "Category": "Product Labeling",
+    "Zusatztext": "POLA RE",
+    "@image": "assets/img/handschuhe-30.png",
+    "Dateiname": "handschuhe-30.png",
     "path extension": "assets/img/"
   }
 ]
