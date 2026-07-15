@@ -678,5 +678,285 @@
     "@image": "assets/img/handschuhe-30.png",
     "Dateiname": "handschuhe-30.png",
     "path extension": "assets/img/"
+  },
+  {
+    "Author": "BSMI, CE, CMIM, CSA, cULus, KC, RCM, China RoHS, TÜV, WEEE",
+    "Titel": "Dell",
+    "Thema": "Hard Disk",
+    "Category": "Device Labeling",
+    "Zusatztext": "8 TB",
+    "@image": "assets/img/Festplatte-31.png",
+    "Dateiname": "Festplatte-31.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "BSMI, CE, CMIM, cULus, KC, RCM, China RoHS, TÜV, WEEE",
+    "Titel": "HP",
+    "Thema": "Hard Disk",
+    "Category": "Device Labeling",
+    "Zusatztext": "4 TB",
+    "@image": "assets/img/Festplatte-32.png",
+    "Dateiname": "Festplatte-32.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "BSMI, CE, CMIM, cULus, KC, RCM, China RoHS, TÜV, WEEE",
+    "Titel": "Dell",
+    "Thema": "Hard Disk",
+    "Category": "Device Labeling",
+    "Zusatztext": "1 TB",
+    "@image": "assets/img/Festplatte-33.png",
+    "Dateiname": "Festplatte-33.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "CE, C-Tick, cULus, TÜV",
+    "Titel": "Hitachi",
+    "Thema": "Hard Disk",
+    "Category": "Device Labeling",
+    "Zusatztext": "4871 MB",
+    "@image": "assets/img/Festplatte-34.png",
+    "Dateiname": "Festplatte-34.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "BSMI, CE, cULus, KC, RCM, China RoHS, TÜV, WEEE",
+    "Titel": "HP",
+    "Thema": "Hard Disk",
+    "Category": "Device Labeling",
+    "Zusatztext": "4 TB",
+    "@image": "assets/img/Festplatte-35.png",
+    "Dateiname": "Festplatte-35.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "BSMI, CE, CMIM, CSA, cULus, KC, RCM, China RoHS, TÜV, WEEE",
+    "Titel": "Toshiba",
+    "Thema": "Hard Disk",
+    "Category": "Device Labeling",
+    "Zusatztext": "8 TB",
+    "@image": "assets/img/Festplatte-36.png",
+    "Dateiname": "Festplatte-36.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "BSMI, CE, CMIM, CSA, cULus, KC, RCM, China RoHS, TÜV, WEEE",
+    "Titel": "Dell",
+    "Thema": "Hard Disk",
+    "Category": "Device Labeling",
+    "Zusatztext": "4 TB",
+    "@image": "assets/img/Festplatte-37.png",
+    "Dateiname": "Festplatte-37.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "CE, CSA, C-Tick, cULus, TÜV",
+    "Titel": "Fujitsu",
+    "Thema": "Hard Disk",
+    "Category": "Device Labeling",
+    "Zusatztext": "20 GB",
+    "@image": "assets/img/Festplatte-38.png",
+    "Dateiname": "Festplatte-38.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "CE, CSA, C-Tick, cULus, TÜV",
+    "Titel": "IBM",
+    "Thema": "Hard Disk",
+    "Category": "Device Labeling",
+    "Zusatztext": "9 GB",
+    "@image": "assets/img/Festplatte-39.png",
+    "Dateiname": "Festplatte-39.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "BSMI, CE, CSA, C-Tick, cULus, China RoHS, TÜV, WEEE",
+    "Titel": "Fujitsu",
+    "Thema": "Hard Disk",
+    "Category": "Device Labeling",
+    "Zusatztext": "73 GB",
+    "@image": "assets/img/Festplatte-40.png",
+    "Dateiname": "Festplatte-40.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "BSMI, CE, cULus, China RoHS, TÜV, WEEE",
+    "Titel": "Barracuda® LP",
+    "Thema": "Hard Disk",
+    "Category": "Device Labeling",
+    "Zusatztext": "1 TB",
+    "@image": "assets/img/Festplatte-41.png",
+    "Dateiname": "Festplatte-41.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "BSMI, CE, CSA, C-Tick, cULus, China RoHS, TÜV, WEEE",
+    "Titel": "Toshiba",
+    "Thema": "Hard Disk",
+    "Category": "Device Labeling",
+    "Zusatztext": "300 GB",
+    "@image": "assets/img/Festplatte-42.png",
+    "Dateiname": "Festplatte-42.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "BSMI, CE, cULus, KC, RCM, China RoHS, TÜV, WEEE",
+    "Titel": "Seagate",
+    "Thema": "Hard Disk",
+    "Category": "Device Labeling",
+    "Zusatztext": "1 TB",
+    "@image": "assets/img/Festplatte-43.png",
+    "Dateiname": "Festplatte-43.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "BSMI, CE, C-Tick, cULus, KC, China RoHS, TÜV, WEEE",
+    "Titel": "Toshiba",
+    "Thema": "Hard Disk",
+    "Category": "Device Labeling",
+    "Zusatztext": "500 GB",
+    "@image": "assets/img/Festplatte-44.png",
+    "Dateiname": "Festplatte-44.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "BSMI, CE, CMIM, CSA, cULus, KC, RCM, China RoHS, TÜV, WEEE",
+    "Titel": "Dell",
+    "Thema": "Hard Disk",
+    "Category": "Device Labeling",
+    "Zusatztext": "600 GB",
+    "@image": "assets/img/Festplatte-45.png",
+    "Dateiname": "Festplatte-45.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "BSMI, CE, cULus, KC, RCM, China RoHS, TÜV, WEEE",
+    "Titel": "Seagate",
+    "Thema": "Hard Disk",
+    "Category": "Device Labeling",
+    "Zusatztext": "3 TB",
+    "@image": "assets/img/Festplatte-46.png",
+    "Dateiname": "Festplatte-46.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "BSMI, CE, CSA, C-Tick, cULus, China RoHS, TÜV, WEEE",
+    "Titel": "Toshiba",
+    "Thema": "Hard Disk",
+    "Category": "Device Labeling",
+    "Zusatztext": "146 GB",
+    "@image": "assets/img/Festplatte-47.png",
+    "Dateiname": "Festplatte-47.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "BSMI, CE, C-Tick, cULus, KC, China RoHS, TÜV, WEEE",
+    "Titel": "Hitachi",
+    "Thema": "Hard Disk",
+    "Category": "Device Labeling",
+    "Zusatztext": "500 GB",
+    "@image": "assets/img/Festplatte-48.png",
+    "Dateiname": "Festplatte-48.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "BSMI, CE, CSA, C-Tick, cULus, KC, China RoHS, TÜV, WEEE",
+    "Titel": "Toshiba",
+    "Thema": "Hard Disk",
+    "Category": "Device Labeling",
+    "Zusatztext": "450 GB",
+    "@image": "assets/img/Festplatte-49.png",
+    "Dateiname": "Festplatte-49.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "BSMI, CE, C-Tick, cULus, China RoHS, TÜV, WEEE",
+    "Titel": "Seagate",
+    "Thema": "Hard Disk",
+    "Category": "Device Labeling",
+    "Zusatztext": "1 TB",
+    "@image": "assets/img/Festplatte-50.png",
+    "Dateiname": "Festplatte-50.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "BSMI, CE, CSA, C-Tick, cULus, China RoHS, TÜV, WEEE",
+    "Titel": "Dell",
+    "Thema": "Hard Disk",
+    "Category": "Device Labeling",
+    "Zusatztext": "300 GB",
+    "@image": "assets/img/Festplatte-51.png",
+    "Dateiname": "Festplatte-51.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "BSMI, CE, CSA, cULus, KC, RCM, China RoHS, TÜV, WEEE",
+    "Titel": "Lenovo",
+    "Thema": "Hard Disk",
+    "Category": "Device Labeling",
+    "Zusatztext": "2 TB",
+    "@image": "assets/img/Festplatte-52.png",
+    "Dateiname": "Festplatte-52.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "CE, CSA, cULus, TÜV",
+    "Titel": "Western Digital",
+    "Thema": "Hard Disk",
+    "Category": "Device Labeling",
+    "Zusatztext": "8455 MB",
+    "@image": "assets/img/Festplatte-53.png",
+    "Dateiname": "Festplatte-53.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "BSMI, CE, C-Tick, cULus, China RoHS, TÜV, WEEE",
+    "Titel": "Hitachi",
+    "Thema": "Hard Disk",
+    "Category": "Device Labeling",
+    "Zusatztext": "450 GB",
+    "@image": "assets/img/Festplatte-54.png",
+    "Dateiname": "Festplatte-54.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "BSMI, CE, CSA, cULus, KC, RCM, China RoHS, TÜV, WEEE",
+    "Titel": "Toshiba",
+    "Thema": "Hard Disk",
+    "Category": "Device Labeling",
+    "Zusatztext": "600 GB",
+    "@image": "assets/img/Festplatte-55.png",
+    "Dateiname": "Festplatte-55.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "BSMI, CE, C-Tick, cULus, China RoHS, TÜV, WEEE",
+    "Titel": "Seagate",
+    "Thema": "Hard Disk",
+    "Category": "Device Labeling",
+    "Zusatztext": "80 GB",
+    "@image": "assets/img/Festplatte-56.png",
+    "Dateiname": "Festplatte-56.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "C-Tick, cULus, KC, China RoHS",
+    "Titel": "Hitachi",
+    "Thema": "Hard Disk",
+    "Category": "Device Labeling",
+    "Zusatztext": "320 GB",
+    "@image": "assets/img/Festplatte-57.png",
+    "Dateiname": "Festplatte-57.png",
+    "path extension": "assets/img/"
+  },
+  {
+    "Author": "BSMI, CE, C-Tick, cULus, TÜV, WEEE",
+    "Titel": "Maxtor",
+    "Thema": "Hard Disk",
+    "Category": "Device Labeling",
+    "Zusatztext": "200 GB",
+    "@image": "assets/img/Festplatte-58.png",
+    "Dateiname": "Festplatte-58.png",
+    "path extension": "assets/img/"
   }
 ]
