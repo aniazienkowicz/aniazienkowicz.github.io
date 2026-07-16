@@ -40,6 +40,7 @@ function sortData(dataArray, sortByCategory = true) {
 // Filter-Logik
 function setupFilter() {
     const filterButtons = document.querySelectorAll('.filter-btn');
+    const infoTextAll = document.getElementById('filter-infotextall');
     const infoTextProd = document.getElementById('filter-infotext');
     const infoTextDev = document.getElementById('filter-infotext2');
     const infoTextTrans = document.getElementById('filter-infotext3');
@@ -57,6 +58,7 @@ function setupFilter() {
             let filteredData = allData;
             let sortByCategory = true;
 
+            // 1. Daten filtern
             if (selectedFilter !== 'all') {
                 filteredData = allData.filter(item => {
                     const itemCat = (item.Category || item.Kategorie || '').trim();
@@ -67,29 +69,33 @@ function setupFilter() {
             }
             renderKatalog(sortData(filteredData, sortByCategory));
 
-            [infoTextProd, infoTextDev, infoTextTrans, deviceSymbols, safetyTitle].forEach(el => {
+            // 2. Alle Infotexte verstecken
+            [infoTextAll, infoTextProd, infoTextDev, infoTextTrans, deviceSymbols, safetyTitle].forEach(el => {
                 if (el) el.className = 'info-text-hidden';
             });
 
+            // 3. Infobox für Symbole zurücksetzen
             if (infoBox) {
                 infoBox.classList.remove('visible');
                 setTimeout(() => { infoBox.style.display = 'none'; }, 400);
             }
             
-            // Symbole zurücksetzen
             document.querySelectorAll('#device-symbols img').forEach(i => {
                 i.classList.remove('is-active');
                 if (i.getAttribute('data-original')) i.src = i.getAttribute('data-original');
             });
             
-            if (selectedFilter === 'Product Labeling') {
-                infoTextProd.className = 'info-text-visible';
+            // 4. Den korrekten Infotext anzeigen
+            if (selectedFilter === 'all') {
+                if (infoTextAll) infoTextAll.className = 'info-text-visible';
+            } else if (selectedFilter === 'Product Labeling') {
+                if (infoTextProd) infoTextProd.className = 'info-text-visible';
             } else if (selectedFilter === 'Device Labeling') {
-                infoTextDev.className = 'info-text-visible';
+                if (infoTextDev) infoTextDev.className = 'info-text-visible';
                 if (deviceSymbols) deviceSymbols.className = 'info-text-visible';
                 if (safetyTitle) safetyTitle.className = 'info-text-visible';
             } else if (selectedFilter === 'Transport Labeling') {
-                infoTextTrans.className = 'info-text-visible';
+                if (infoTextTrans) infoTextTrans.className = 'info-text-visible';
             }
         });
     });

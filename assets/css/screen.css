@@ -689,6 +689,7 @@ img {
 /* ==========================================================================
    7. INFOTEXT STYLING (PERFORMANCE-OPTIMIERT & SMOOTH)
    ========================================================================== */
+#filter-infotextall,
 #filter-infotext,
 #filter-infotext2,
 #filter-infotext3 {
@@ -723,6 +724,7 @@ img {
 }
 
 /* Zustand: Sichtbar (Schaltet das Display an und fadet via GPU ein) */
+#filter-infotextall.info-text-visible,
 #filter-infotext.info-text-visible,
 #filter-infotext2.info-text-visible,
 #filter-infotext3.info-text-visible {
@@ -733,6 +735,7 @@ img {
 }
 
 /* Zustand: Explizit ausgeblendet */
+#filter-infotextall.info-text-hidden,
 #filter-infotext.info-text-hidden,
 #filter-infotext2.info-text-hidden,
 #filter-infotext3.info-text-hidden {
