@@ -363,3 +363,726 @@ img {
 .card-image img:hover {
   transform: scale(1.03); /* Minimale Vergrößerung beim Drüberschweben */
 }
+#device-symbols {
+  display: none; 
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  
+  /* Wir setzen die Breite so, dass genau 7 Symbole (plus Gaps) reinpassen */
+  /* Bei 90px Bildhöhe und 15px Gap benötigen wir ca. 720px - 750px Breite */
+  max-width: 750px; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#device-symbols.info-text-visible {
+  display: flex;
+  opacity: 1;
+}
+
+#device-symbols img {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  opacity: 0.8;
+  
+  /* Wir setzen eine feste Basisbreite, damit sie nicht schrumpfen */
+  flex: 0 0 auto; 
+}
+
+#device-symbols img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+/* 1. Abstand zwischen Kategorie-Überschrift und dem Rest */
+.thema-group-header {
+  margin-bottom: 5px; /* Reduziert von 15px */
+}
+
+/* 2. Abstand Infotext nach unten */
+#filter-infotext.info-text-visible,
+#filter-infotext2.info-text-visible,
+#filter-infotext3.info-text-visible {
+  margin-bottom: 20px; /* Reduziert von 80px */
+}
+
+/* 3. Abstand Bilder-Container nach oben und unten */
+#device-symbols {
+  margin-top: 10px;    /* Reduziert von 40px */
+  margin-bottom: 30px; /* Reduziert von 80px */
+  padding-top: 10px;   /* Reduziert von 30px, verringert den Abstand zum Strich */
+}
+/* Klasse für das permanent vergrößerte Symbol */
+img[alt="BSMI"].is-active {
+  transform: scale(1.2); /* Etwas größer als der normale Hover-Effekt */
+  opacity: 1 !important;
+  cursor: pointer;
+}
+img[alt="CE"].is-active {
+  transform: scale(1.2); /* Etwas größer als der normale Hover-Effekt */
+  opacity: 1 !important;
+  cursor: pointer;
+}
+#symbol-info-box {
+  margin: 10px auto 30px auto;
+  padding: 20px;
+  max-width: 800px;
+  text-align: left;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  background-color: #fafafa;
+  display: none; /* Initial */
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+#symbol-info-box.visible {
+  opacity: 1; /* Fade-In Effekt */
+}
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+    background-color: #555;
+    color: white;
+    border: none;
+    
+    /* WICHTIG: Breite und Höhe müssen identisch sein */
+    width: 50px;
+    height: 50px;
+    
+    /* Zentrierung des Pfeils */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    border-radius: 50%; /* Macht es bei quadratischen Maßen zum Kreis */
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 1000;
+    transition: opacity 0.3s;
+    
+    /* Optional: Entfernt das Standard-Padding, da wir nun Breite/Höhe festlegen */
+    padding: 0;
+}
+
+#back-to-top:hover {
+    background-color: #555;
+}
+#safety-marks-title {
+    text-align: left;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 40px auto 20px auto;
+    color: #222;
+}
+
+/* Sicherstellen, dass die Klassen das DOM wirklich steuern */
+#safety-marks-title.info-text-hidden {
+    display: none !important;
+}
+
+#safety-marks-title.info-text-visible {
+    display: block !important;
+}
+/* ==========================================================================
+   1. CSS RESET & VARIABLEN-VORBEREITUNG
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Univers Next Pro Regular", sans-serif;
+  padding: 60px 20px 20px;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* ==========================================================================
+   2. FILTER-LEISTE (BUTTONS)
+   ========================================================================== */
+.filter-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0 40px; /* Leicht erhöhter Abstand nach unten */
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Stil für den gerade aktiven Filter-Button */
+.filter-btn.active {
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+/* ==========================================================================
+   3. HAUPTCONTAINER & GRID-LAYOUT (Jetzt 4 SPALTEN)
+   ========================================================================== */
+#katalog.katalog-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.card {
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  padding: 10px; 
+  border-radius: 8px;
+  transition: background-color 0.4s ease; 
+}
+
+/* 
+   Aufteilung in 4 exakt gleich große Zonen (jeweils 25%).
+*/
+.card-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center; 
+  gap: 30px;
+  width: 100%;
+}
+
+/* ==========================================================================
+   4. SPALTEN BASIS-EINSTELLUNGEN & AUSRICHTUNG
+   ========================================================================== */
+.card-title,
+.card-author,
+.card-info,
+.card-image {
+  width: 100%;
+  display: flex;
+  align-items: center; /* Vertikale Zentrierung */
+  
+  transform: scale(1.0);
+  transition: transform 0.25s ease, font-weight 0.25s ease, color 0.25s ease;
+  position: relative;
+  backface-visibility: hidden;
+}
+
+/* 1. Spalte: Titel */
+.card-title {
+  justify-content: center; 
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #333;
+}
+
+/* 2. Spalte: Autor */
+.card-author {
+  justify-content: center; 
+  text-align: center;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.card-author.unknown {
+  font-style: italic;
+  color: #999;
+}
+
+/* 3. Spalte: NEUE Textbox links vom Bild */
+.card-info {
+  justify-content: center;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* 4. Spalte: Bild-Container ganz rechts außen */
+.card-image {
+  justify-content: flex-end; 
+}
+
+/* ==========================================================================
+   5. BILD-STYLING & FEHLER-MELDUNGEN
+   ========================================================================== */
+img {
+  max-width: 100%;
+  max-height: 180px;
+  height: auto;
+  object-fit: contain;
+  display: block; /* Verhindert den Baseline-Shift (Abstand nach unten) */
+}
+
+.no-results, .loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* ==========================================================================
+   6. HOVER EFFEKTE (INDIVIDUELL)
+   ========================================================================== */
+.card-title,
+.card-author,
+.card-info,
+.card-image img {
+  transition: transform 0.25s ease, font-weight 0.25s ease, color 0.25s ease;
+}
+
+/* Nur der Titel reagiert, wenn man direkt darüber fährt */
+.card-title:hover {
+  font-weight: bold;
+  transform: scale(1.15);    
+  cursor: pointer;
+}
+
+/* Nur der Autor reagiert, wenn man direkt darüber fährt */
+.card-author:hover {
+  font-weight: bold;
+  transform: scale(1.15);    
+  cursor: pointer;
+}
+
+.card-info:hover {
+  font-weight: bold;
+  transform: scale(1.15);    
+  cursor: pointer;
+}
+
+/* Nur das Bild reagiert, wenn man direkt über das Bild fährt */
+.card-image img:hover {
+  transform: scale(1.15);
+  cursor: pointer;
+}
+/* ==========================================================================
+   7. INFOTEXT STYLING (PERFORMANCE-OPTIMIERT & SMOOTH)
+   ========================================================================== */
+#filter-infotext,
+#filter-infotext2,
+#filter-infotext3 {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  
+  /* Typografie */
+  font-size: 1.0rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #111;
+  letter-spacing: -0.02em;
+  
+  /* Rendere den Text auf einer eigenen GPU-Ebene */
+  will-change: transform, opacity;
+  backface-visibility: hidden; 
+  -webkit-font-smoothing: antialiased;
+
+  /* Startzustand: Unsichtbar und leicht nach unten versetzt */
+  opacity: 0;
+  transform: translateY(20px);
+  
+  /* Übergang: Nur noch GPU-beschleunigte Werte animieren (Keine Höhen-Animation!) */
+  transition: 
+    opacity 0.6s cubic-bezier(0.215, 0.610, 0.355, 1.000),
+    transform 0.6s cubic-bezier(0.215, 0.610, 0.355, 1.000),
+    display 0.6s ease allow-discrete; /* Sorgt dafür, dass ausgeblendeter Text keinen Platz wegnimmt */
+    
+  /* Wichtig: Wenn ausgeblendet, komplett aus dem Layout nehmen */
+  display: none;
+}
+
+/* Zustand: Sichtbar (Schaltet das Display an und fadet via GPU ein) */
+#filter-infotext.info-text-visible,
+#filter-infotext2.info-text-visible,
+#filter-infotext3.info-text-visible {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  margin-bottom: 80px; /* Der Abstand ist sofort da, nur der Text fadet smooth */
+}
+
+/* Zustand: Explizit ausgeblendet */
+#filter-infotext.info-text-hidden,
+#filter-infotext2.info-text-hidden,
+#filter-infotext3.info-text-hidden {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  margin-bottom: 0;
+}
+/* ==========================================================================
+   8. THEMA GRUPPEN-ÜBERSCHRIFTEN (Eingebetteter Look)
+   ========================================================================== */
+.thema-group-header {
+  width: 100%;
+  padding: 12px 20px;
+  margin-top: 50px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5; /* Subtiler, hellgrauer Hintergrund */
+  border-radius: 8px;        /* Gleicher Radius wie bei den Karten */
+}
+
+.thema-group-header h2 {
+  font-family: "Univers Next Pro Regular", sans-serif;
+  font-size: 1.1rem;         /* Etwas kompakter, wirkt edler */
+  font-weight: bold;
+  color: #555;               /* Dunkelgrau statt hartem Schwarz */
+  text-transform: none;      /* Normale Groß-/Kleinschreibung */
+  letter-spacing: 0.02em;
+}
+
+/* Verhindert zu viel Abstand beim allerersten Element */
+#katalog > .thema-group-header:first-child {
+  margin-top: 0;
+}
+/* --- Lightbox System (Weißer, ausgegrauter Hintergrund) --- */
+.lightbox {
+  display: none; /* Standardmäßig versteckt */
+  position: fixed;
+  z-index: 9999; /* Über allen anderen Elementen */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9); /* Halbtransparenter weißer Hintergrund */
+  backdrop-filter: blur(8px); /* Macht den Hintergrund weich unscharf */
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content {
+  max-width: 85%;
+  max-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 6px;
+  /* Ein weicherer, dunkler Schatten, der auf weißem Grund gut wirkt */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); 
+}
+
+/* X-Schließen Button (Dunkelgrau für guten Kontrast auf Weiß) */
+.close-btn {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  color: #111111; 
+  font-size: 50px;
+  font-weight: 200;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #ff3b30; /* Schickes System-Rot beim Hovern */
+  transform: scale(1.1);
+}
+
+/* Navigations-Buttons (Dunklerer Kontrast für den weißen Hintergrund) */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.05); /* Sehr dezenter grauer Kreis */
+  color: #111111; /* Dunkle Pfeile */
+  border: none;
+  font-size: 32px;
+  padding: 15px 22px;
+  cursor: pointer;
+  border-radius: 50%;
+  user-select: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+}
+
+.nav-btn:hover {
+  background: rgba(0, 0, 0, 0.15); /* Wird beim Hovern etwas dunkler */
+  transform: translateY(-50%) scale(1.05);
+}
+
+.prev-btn {
+  left: 30px;
+}
+
+.next-btn {
+  right: 30px;
+}
+
+/* Hover-Effekt für die Bilder im Katalog */
+.card-image img {
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card-image img:hover {
+  transform: scale(1.03); /* Minimale Vergrößerung beim Drüberschweben */
+}
+#device-symbols {
+  display: none; 
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  
+  /* Wir setzen die Breite so, dass genau 7 Symbole (plus Gaps) reinpassen */
+  /* Bei 90px Bildhöhe und 15px Gap benötigen wir ca. 720px - 750px Breite */
+  max-width: 750px; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#device-symbols.info-text-visible {
+  display: flex;
+  opacity: 1;
+}
+
+#device-symbols img {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  opacity: 0.8;
+  
+  /* Wir setzen eine feste Basisbreite, damit sie nicht schrumpfen */
+  flex: 0 0 auto; 
+}
+
+#device-symbols img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+/* 1. Abstand zwischen Kategorie-Überschrift und dem Rest */
+.thema-group-header {
+  margin-bottom: 5px; /* Reduziert von 15px */
+}
+
+/* 2. Abstand Infotext nach unten */
+#filter-infotext.info-text-visible,
+#filter-infotext2.info-text-visible,
+#filter-infotext3.info-text-visible {
+  margin-bottom: 20px; /* Reduziert von 80px */
+}
+
+/* 3. Abstand Bilder-Container nach oben und unten */
+#device-symbols {
+  margin-top: 10px;    /* Reduziert von 40px */
+  margin-bottom: 30px; /* Reduziert von 80px */
+  padding-top: 10px;   /* Reduziert von 30px, verringert den Abstand zum Strich */
+}
+/* Klasse für das permanent vergrößerte Symbol */
+img[alt="BSMI"].is-active {
+  transform: scale(1.2); /* Etwas größer als der normale Hover-Effekt */
+  opacity: 1 !important;
+  cursor: pointer;
+}
+img[alt="CE"].is-active {
+  transform: scale(1.2); /* Etwas größer als der normale Hover-Effekt */
+  opacity: 1 !important;
+  cursor: pointer;
+}
+#symbol-info-box {
+  margin: 10px auto 30px auto;
+  padding: 20px;
+  max-width: 800px;
+  text-align: left;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  background-color: #fafafa;
+  display: none; /* Initial */
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+#symbol-info-box.visible {
+  opacity: 1; /* Fade-In Effekt */
+}
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+    background-color: #555;
+    color: white;
+    border: none;
+    
+    /* WICHTIG: Breite und Höhe müssen identisch sein */
+    width: 50px;
+    height: 50px;
+    
+    /* Zentrierung des Pfeils */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    border-radius: 50%; /* Macht es bei quadratischen Maßen zum Kreis */
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 1000;
+    transition: opacity 0.3s;
+    
+    /* Optional: Entfernt das Standard-Padding, da wir nun Breite/Höhe festlegen */
+    padding: 0;
+}
+
+#back-to-top:hover {
+    background-color: #555;
+}
+#safety-marks-title {
+    text-align: left;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 40px auto 20px auto;
+    color: #222;
+}
+
+/* Sicherstellen, dass die Klassen das DOM wirklich steuern */
+#safety-marks-title.info-text-hidden {
+    display: none !important;
+}
+
+#safety-marks-title.info-text-visible {
+    display: block !important;
+}
+/* Gemeinsame Basis für alle Header */
+.main-header {
+    display: flex;
+    padding: 20px 40px;
+    align-items: center;
+    width: 100%;
+}
+
+/* 1. Startseite: Titel links, Link rechts */
+/* 1. Startseite: Header zentriert mit fester Breite */
+/* ==========================================================================
+   STARTSEITE-HEADER (Mitte: Titel, Rechts: Imprint-Link)
+   ========================================================================== */
+
+.home-header {
+    display: grid;
+    /* Drei Spalten: Linker Platzhalter (1fr), Titel (auto), Rechter Link (1fr) */
+    /* Dadurch wird der Titel immer zwischen zwei gleich großen Flächen zentriert */
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 40px;
+}
+
+.home-header h1 {
+    grid-column: 2; /* Erzwingt die Platzierung in der mittleren Spalte */
+    text-align: center;
+    margin: 0;
+    font-size: 3rem;
+}
+
+.home-header .imprint-link {
+    grid-column: 3; /* Platzierung in der rechten Spalte */
+    text-align: right;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   IMPRESSUM-HEADER (Links: Back-Link, Mitte: Überschrift)
+   ========================================================================== */
+
+.imprint-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    position: relative; /* Wichtig für die absolute Positionierung der Elemente */
+}
+
+/* Der Back-Link am linken Rand */
+.imprint-header .back-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    flex: 1; /* Nimmt den linken Platz ein */
+    text-align: left;
+}
+
+/* Die Überschrift zentriert */
+.imprint-header h1 {
+    flex: 2; /* Nimmt den mittleren Platz ein */
+    text-align: center;
+    margin: 0; /* Entfernt Standard-Margins, um die Zentrierung nicht zu stören */
+    font-size: 2.5rem; /* Optional: etwas kleiner als der Haupt-Titel */
+}
+
+/* Ein unsichtbarer Spacer rechts, damit der Titel optisch wirklich mittig bleibt */
+.imprint-header::after {
+    content: "";
+    flex: 1; /* Gleiche Breite wie der Link, gleicht das Layout aus */
+}
+main {
+    max-width: 50%; /* Begrenzt den Text auf die Hälfte des Bildschirms */
+    margin: 0 auto;  /* Zentriert den Block auf der Seite */
+    padding: 20px;
+}
+.imprint-header .back-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    flex: 1; /* Nimmt den linken Platz ein */
+    text-align: left;
+}
+.instagram-link {
+    text-decoration: underline;
+    color: #333;
+    font-weight: bold;
+    flex: 1; /* Nimmt den linken Platz ein */
+    text-align: left;
+}

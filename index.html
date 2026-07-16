@@ -16,7 +16,12 @@
 </head>
 <body>
 
-  <h1>MICROGRAPHICS</h1>
+  <!-- Ändere diesen Teil im <body> -->
+<header class="home-header">
+    <!-- Der Spacer kommt automatisch durch das ::before im CSS -->
+    <h1>MICROGRAPHICS</h1>
+    <a href="imprint.html" class="imprint-link">IMPRINT</a>
+</header>
 
   <!-- Filter-Leiste auf der Frontseite -->
   <div class="filter-container">
@@ -35,8 +40,27 @@
     Product labeling on electronic devices is a key element of device safety, quality assurance, and traceability. It is applied directly to the device or its packaging in the form of durable type and rating plates, laser engravings, or special industrial labels. This labeling is often required by law and provides important technical data such as rated power, performance parameters, and protection classes. It also documents compliance with international quality and safety standards and ensures traceability through serial numbers.
   
         </div>
-
-    </div>
+<!-- Container für Zertifizierungssymbole, wird bei Device Labeling sichtbar -->
+<div id="device-symbols" class="info-text-hidden">
+  
+    <img src="assets/img/BSMI.png" alt="BSMI">
+    <img src="assets/img/CE.png" alt="CE">
+    <img src="assets/img/CMIM.png" alt="CMIM">
+    <img src="assets/img/CSA.png" alt="CSA">
+     <img src="assets/img/C_Tick.png" alt="C-Tick">
+    <img src="assets/img/curus.png" alt="cURus">
+    <img src="assets/img/KC.png" alt="KC">
+    <img src="assets/img/MIC.png" alt="MIC">
+    <img src="assets/img/NCC.png" alt="NCC">
+    <img src="assets/img/RCM.png" alt="RCM">
+    <img src="assets/img/China_RoHS.png" alt="China RoHS">
+    <img src="assets/img/TUEV.png" alt="TÜV">
+    <img src="assets/img/WEEE.png" alt="WEEE">
+  </div>
+  <div id="symbol-info-box" style="margin-top: 20px; padding: 15px; border-radius: 8px; background: #f9f9f9; display: none;">
+    <p id="symbol-info-text" style="font-size: 1rem; color: #333; line-height: 1.5;"></p>
+</div>
+</div>
   </div> <!-- Hier wurde die Div-Hierarchie repariert -->
 
   <div id="filter-infotext3" class="info-text-hidden">
@@ -55,6 +79,6 @@
       <img id="lightbox-img" src="" alt="">
     </div>
   </div>
-
+<button id="back-to-top" title="Go to top">↑</button>
 </body>
 </html>
